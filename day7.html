@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 7 | CSS CHALLENGE</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:600,400");
+
+    :root {
+      --blue: #5F98CD;
+      --blue-dark: #264057;
+      --blue-light: #B2DAFF;
+      --text-color: #666;
+      --white: #fff;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      background: var(--blue-dark);
+      color: var(--text-color);
+      font-family: 'Open Sans', Helvetica, sans-serif;
+
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    /* PANEL */
+    .panel {
+      background: var(--white);
+      border-radius: .5rem;
+      overflow: hidden;
+      transition: all .5s ease-in-out;
+      width: 300px;
+      box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel.show-menu {
+      transform: translate3d(100px, 0, 0);
+    }
+
+    .header {
+      height: 60px;
+      width: 100%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+    }
+
+    .menu-icon {
+      position: relative;
+      width: 30px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .dash {
+      position: absolute;
+      background: var(--blue-light);
+      border-radius: 3px;
+      transition: all .2s ease-in-out;
+      height: 3px;
+    }
+
+    .dash-top {
+      width: 20px;
+      top: 0;
+      left: 0;
+    }
+
+    .dash-bottom {
+      width: 29px;
+      top: auto;
+      bottom: 0;
+    }
+
+    .circle {
+      position: absolute;
+      height: 7px;
+      width: 7px;
+      border-radius: 4px;
+      top: -2px;
+      right: 0;
+      background: var(--blue-light);
+      transition: all .2s ease-in-out;
+    }
+
+    .menu-icon:hover .dash,
+    .menu-icon:hover .circle {
+      background-color: var(--white);
+    }
+
+    .title {
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .search-input {
+      position: absolute;
+      left: 55px;
+      width: 75%;
+      border-radius: 5rem;
+      border: none;
+      outline: none;
+      background: var(--white);
+      padding: .5rem 1rem;
+      color: var(--text-color);
+      transition: .3s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .search-input.active {
+      left: 15px;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .search-icon {
+      color: var(--blue-light);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.25rem;
+      transition: all .3s ease;
+    }
+
+    .search-icon:hover {
+      color: var(--white);
+    }
+
+    .notifications {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .notification {
+      animation-fill-mode: both;
+      animation: show-notif .5s ease-out;
+      flex-basis: 33%;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .notification:nth-child(2) {
+      animation-delay: .25s;
+    }
+
+    .notification:nth-child(3) {
+      animation-delay: .5s;
+    }
+
+    .dot {
+      position: absolute;
+      height: 11px;
+      width: 11px;
+      border: 2px solid var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 0 3px var(--white);
+      border-radius: 50%;
+      top: 12.5%;
+      left: -5px;
+      animation: show-dot .5s ease-out .5s;
+      animation-fill-mode: backwards;
+    }
+
+    .notification:last-child .dot {
+      top: 12.5%;
+    }
+
+    .notification:not(:last-child) .dot::after {
+      content: "";
+      position: absolute;
+      width: 3.5px;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #e2f1ff;
+      animation: show-line 1.5s ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    .notification:first-child .dot,
+    .notification:first-child .dot::after {
+      animation-delay: .5s;
+    }
+
+
+    .notification:nth-child(2) .dot,
+    .notification:nth-child(2) .dot::after {
+      animation-delay: 1.5s;
+    }
+
+
+    .notification:nth-child(3) .dot {
+      animation-delay: 2.5s;
+    }
+
+    .time {
+      font-size: .685rem;
+    }
+
+    .notification p {
+      font-size: .925rem;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .notification:hover p {
+      color: var(--blue)
+    }
+
+    @keyframes show-notif {
+      from {
+        transform: translate3d(0, 50px, 0);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes show-dot {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes show-line {
+      from {
+        height: 0;
+      }
+
+      to {
+        height: 5.2rem;
+      }
+    }
+
+    /* MENU */
+    .menu {
+      position: absolute;
+      width: 170px;
+      height: 270px;
+      top: 5%;
+      background-color: #43627D;
+      border-radius: .5rem;
+      overflow: hidden;
+      transition: transform .5s ease-in-out;
+      transform: translate3d(30px, 0, 0);
+    }
+
+    .menu.active {
+      box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2);
+      transform: translate3d(-45px, 0, 0);
+    }
+
+    .menu__item {
+      color: #93B2CD;
+      padding: 1.185rem;
+      list-style: none;
+      line-height: 14px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      display: flex;
+      align-items: center;
+      column-gap: .5rem;
+    }
+
+    .menu__item:hover {
+      color: #fff;
+      background: #385269;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="panel" id="panel">
+        <header class="header">
+          <div class="menu-icon" id="menu-icon" aria-label="Menu" title="menu" role="button">
+            <div class="dash dash-top"></div>
+            <div class="dash dash-bottom"></div>
+            <div class="circle"></div>
+          </div>
+          <h1 class="title">Notifications</h1>
+          <input type="text" class="search-input" id="search-input" placeholder="Search ..." aria-label="search">
+          <i class='bx bx-search search-icon' id="search-icon" aria-label="search button" role="button"
+            title="Search button"></i>
+        </header>
+        <div class="notifications">
+          <article class="notification">
+            <div class="dot"></div>
+            <span class="time">9:24 AM</span>
+            <p><b>John Doe</b> posted a photo on your wall.</p>
+          </article>
+          <article class="notification">
+            <div class="dot"></div>
+            <span class="time">8:19 AM</span>
+            <p><b>Peter Parker</b> commented your last post.</p>
+          </article>
+          <article class="notification">
+            <div class="dot"></div>
+            <span class="time">Yesterday</span>
+            <p><b>Monkey D Luffy</b> added you as friend.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="menu" id="menu">
+        <ul>
+          <li class="menu__item">
+            <i class="bx bxs-dashboard"></i>
+            Dashboard
+          </li>
+          <li class="menu__item">
+            <i class="bx bxs-user"></i>
+            Profile
+          </li>
+          <li class="menu__item">
+            <i class="bx bxs-bell"></i>
+            Notifications
+          </li>
+          <li class="menu__item">
+            <i class="bx bxs-chat"></i>
+            Messages
+          </li>
+          <li class="menu__item">
+            <i class="bx bxs-cog"></i>
+            Settings
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon'),
+      panel = document.getElementById('panel'),
+      menu = document.getElementById('menu');
+
+    const searchIcon = document.getElementById('search-icon'),
+      searchInput = document.getElementById('search-input')
+
+    menuIcon.addEventListener('click', () => {
+      panel.classList.toggle('show-menu')
+      menu.classList.toggle('active')
+    })
+
+    searchIcon.addEventListener("click", () => {
+      searchInput.classList.toggle('active')
+    })
+  </script>
+</body>
+
+</html>
