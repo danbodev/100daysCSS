@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 12 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 350px;
+      height: 350px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #4B4841;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 250px;
+      height: 180px;
+      perspective: 800px;
+    }
+
+    .card:hover .flip {
+      transform: rotateX(180deg) translate3d(0, 0, 0);
+      box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .flip {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+      transition: all 1s ease-in-out;
+    }
+
+    .front,
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #FFCE4E;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .front {
+      z-index: 2;
+      transform: rotateX(0);
+    }
+
+    .front img {
+      position: relative;
+      top: 52px;
+      transform-origin: 50% 100%;
+      animation: bike 0.6s ease-in-out infinite;
+    }
+
+    .street {
+      position: absolute;
+      top: 127px;
+      left: 50px;
+      width: 160px;
+      height: 3px;
+      overflow: hidden;
+    }
+
+    .stripe {
+      position: absolute;
+      right: -25px;
+      top: 0;
+      height: 3px;
+      background: #4B4841;
+      border-radius: 3px;
+      animation-name: street;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .stripe-1 {
+      width: 4px;
+      animation-duration: 1.2s;
+      animation-delay: 1s;
+    }
+
+    .stripe-2 {
+      width: 6px;
+      animation-duration: 1s;
+      animation-delay: .8s;
+    }
+
+    .stripe-3 {
+      width: 8px;
+      animation-duration: 1.3s;
+      animation-delay: .8s;
+    }
+
+    .stripe-4 {
+      width: 10px;
+      animation-duration: 1s;
+      animation-delay: 1s;
+    }
+
+    .stripe-5 {
+      width: 12px;
+      animation-duration: .9s;
+      animation-delay: .8s;
+    }
+
+    .stripe-6 {
+      width: 14px;
+      animation-duration: 1.2s;
+      animation-delay: .5s;
+    }
+
+    .stripe-7 {
+      width: 16px;
+      animation-duration: 1s;
+      animation-delay: .4s;
+    }
+
+    .stripe-8 {
+      width: 18px;
+      animation-duration: 1s;
+      animation-delay: .6s;
+    }
+
+    .stripe-9 {
+      width: 20px;
+      animation-duration: 1s;
+      animation-delay: .8s;
+    }
+
+    .back {
+      transform: rotateX(180deg);
+    }
+
+    .back img {
+      position: relative;
+      z-index: 1;
+      top: 57px;
+      animation: helicopter 1.5s ease-in-out infinite;
+      animation-fill-mode: both;
+    }
+
+    .back .sky {
+      position: absolute;
+      top: 0;
+      left: 50px;
+      bottom: 0;
+      width: 160px;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      right: -25px;
+      height: 3px;
+      background: #4B4841;
+      border-radius: 3px;
+      animation-name: cloud;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .cloud-1 {
+      top: 34px;
+      width: 22px;
+      animation-duration: .7s;
+      animation-delay: .1s;
+    }
+
+    .cloud-2 {
+      top: 48px;
+      width: 19px;
+      animation-duration: .7s;
+      animation-delay: 1s;
+    }
+
+    .cloud-3 {
+      top: 62px;
+      width: 21px;
+      animation-duration: .8s;
+      animation-delay: .3s;
+    }
+
+    .cloud-4 {
+      top: 76px;
+      width: 13px;
+      animation-duration: .8s;
+      animation-delay: .6s;
+    }
+
+    .cloud-5 {
+      top: 90px;
+      width: 24px;
+      animation-duration: .8s;
+      animation-delay: .8s;
+    }
+
+    .cloud-6 {
+      top: 104px;
+      width: 19px;
+      animation-duration: .8s;
+      animation-delay: .9s;
+    }
+
+    .cloud-7 {
+      top: 118px;
+      width: 23px;
+      animation-duration: .7s;
+      animation-delay: .5s;
+    }
+
+    .cloud-8 {
+      top: 132px;
+      width: 19px;
+      animation-duration: .8s;
+      animation-delay: .8s;
+    }
+
+    .cloud-9 {
+      top: 146px;
+      width: 11px;
+      animation-duration: .7s;
+      animation-delay: .9s;
+    }
+
+    @keyframes bike {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(1.03);
+      }
+    }
+
+    @keyframes street {
+      0% {
+        transform: translate3d(0, 0, 0) scaleX(1);
+      }
+
+      100% {
+        transform: translate3d(-210px, 0, 0) scaleX(0.8);
+      }
+    }
+
+    @keyframes helicopter {
+
+      0%,
+      100% {
+        transform: translate3d(0, -5px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, 5px, 0);
+      }
+    }
+
+    @keyframes cloud {
+      0% {
+        transform: translate3d(0, 0, 0) scaleX(1);
+      }
+
+      100% {
+        transform: translate3d(-210px, 0, 0) scaleX(0.8);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="card">
+        <div class="flip">
+          <div class="front">
+            <img src="img/bycicle.svg" alt="bycicle">
+            <div class="street">
+              <div class="stripe stripe-1"></div>
+              <div class="stripe stripe-2"></div>
+              <div class="stripe stripe-3"></div>
+              <div class="stripe stripe-4"></div>
+              <div class="stripe stripe-5"></div>
+              <div class="stripe stripe-6"></div>
+              <div class="stripe stripe-7"></div>
+              <div class="stripe stripe-8"></div>
+              <div class="stripe stripe-9"></div>
+            </div>
+          </div>
+          <div class="back">
+            <img src="img/helicopter.svg" alt="helicopter">
+            <div class="sky">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+              <div class="cloud cloud-4"></div>
+              <div class="cloud cloud-5"></div>
+              <div class="cloud cloud-6"></div>
+              <div class="cloud cloud-7"></div>
+              <div class="cloud cloud-8"></div>
+              <div class="cloud cloud-9"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
