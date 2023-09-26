@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 12 | CSS CHALLENGE</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .frame {
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #fff;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+      padding: 1rem;
+
+      position: relative;
+    }
+
+    .profile {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .profile>img {
+      border-radius: 1rem;
+      transition: filter .3s ease-in-out;
+    }
+
+    .profile:hover>img {
+      filter: brightness(50%);
+    }
+
+    .profile .plus {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      left: 50%;
+      margin: -25px 0 0 -25px;
+      background: #EC6565;
+      border-radius: 50%;
+      box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease-in-out;
+      opacity: 0;
+      transform: scale(2);
+      pointer-events: none;
+    }
+
+    .profile .plus:before {
+      position: absolute;
+      content: "";
+      width: 14px;
+      height: 2px;
+      top: 24px;
+      left: 18px;
+      background: #fff;
+    }
+
+    .profile .plus:after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 14px;
+      top: 18px;
+      left: 24px;
+      background: #fff;
+    }
+
+    .profile:hover .plus {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+
+    .detail {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover {
+      transform: translate3d(0, -100%, 0);
+      transition: transform .6s ease-in .4s;
+    }
+
+    .image {
+      z-index: 1;
+      width: 90px;
+      height: 90px;
+      margin-top: -10px;
+      margin-inline: auto;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 4px 6px 15px 0 rgba(0, 0, 0, 0.2);
+      transform: translate3d(-50%, -400%, 0);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transition: transform .6s ease-in .5s;
+    }
+
+    .infos {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 1.25rem;
+      transform: translate3d(0, 150%, 0);
+      transition: all .6s ease-in .4s;
+      background-color: #EC6565;
+    }
+
+    .btns {
+      display: flex;
+      column-gap: 1.5rem;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: color .3s ease-in-out;
+    }
+
+    .btn:hover {
+      color: #EC6565;
+      background-color: #fff;
+      box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, .2);
+    }
+
+    .close {
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      right: 10px;
+      background: #EC6565;
+      border-radius: 50%;
+      transition: background .3s ease-in-out, transform .5s ease-in .4s;
+      transform: rotate(45deg) translate3d(-150%, -150%, 0);
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    .close::before,
+    .close::after {
+      position: absolute;
+      content: "";
+      background: #fff;
+      transition: background .3s ease-in-out;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    .close::before {
+      width: 16px;
+      height: 4px;
+    }
+
+    .close::after {
+      width: 4px;
+      height: 16px;
+    }
+
+    .close:hover {
+      background: #fff;
+    }
+
+    .close:hover::after,
+    .close:hover::before {
+      background: #EC6565;
+    }
+
+    .detail.active {
+      pointer-events: all;
+    }
+
+    .detail.active .image {
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .detail.active .cover {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .detail.active .close {
+      transform: rotate(45deg) translate3d(0, 0, 0);
+      transition: background .3s ease-in-out, transform .6s ease-out .6s;
+    }
+
+    .detail.active .infos {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .detail.active :is(.image, .cover, .infos) {
+      transition: all .6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="profile" id="profile-1">
+        <img src="https://picsum.photos/150" alt="" loading="lazy">
+        <div class="plus" role="button" aria-label="load more"></div>
+      </div>
+      <div class="profile" id="profile-2">
+        <img src="https://picsum.photos/151" alt="" loading="lazy">
+        <div class="plus" role="button" aria-label="load more"></div>
+      </div>
+      <div class="profile" id="profile-3">
+        <img src="https://picsum.photos/152" alt="" loading="lazy">
+        <div class="plus" role="button" aria-label="load more"></div>
+      </div>
+      <div class="profile" id="profile-4">
+        <img src="https://picsum.photos/153" alt="" loading="lazy">
+        <div class="plus" role="button" aria-label="load more"></div>
+      </div>
+
+      <div class="detail" id="detail">
+        <span class="close" role="button" aria-label="close" id="close"></span>
+        <img class="cover" src="https://picsum.photos/300/150" alt="">
+        <div class="image">
+          <img src="https://picsum.photos/150" alt="">
+        </div>
+        <div class="infos">
+          <p class="name">
+            Nico Robin
+          </p>
+          <div class="btns">
+            <button class="btn">
+              <i class="bx bxs-phone"></i>
+            </button>
+            <button class="btn">
+              <i class="bx bxs-comment"></i>
+            </button>
+            <button class="btn">
+              <i class="bx bxs-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const profiles = document.querySelectorAll(".profile"),
+      close = document.getElementById('close')
+
+    profiles.forEach(profile => profile.addEventListener('click', () => {
+      toggleDetail(true)
+    }))
+
+    close.addEventListener("click", () => toggleDetail(false))
+
+    function toggleDetail(state) {
+      const detail = document.getElementById("detail")
+      detail.classList[state ? "add" : "remove"]('active')
+    }
+  </script>
+</body>
+
+</html>
