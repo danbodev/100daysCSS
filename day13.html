@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 13 | CSS CHALLENGE</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      font-family: 'Open Sans', sans-serif;
+      color: #fff;
+
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 400px;
+      height: 430px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #4CB6DE;
+
+      display: flex;
+      align-items: center;
+      padding-inline: 2rem;
+    }
+
+    .quote {
+      position: relative;
+    }
+
+    .quote:before {
+      content: "„";
+      position: absolute;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 250px;
+      color: #6AC2E3;
+      line-height: 35px;
+      top: -100px;
+      left: -7%;
+    }
+
+    blockquote {
+      position: relative;
+      z-index: 1;
+      font-size: 1.5rem;
+      line-height: 35px;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      background: #286F8A;
+      padding: .1rem .5rem;
+      border-radius: .25rem;
+      cursor: pointer;
+    }
+
+    .tooltip:hover .info,
+    .tooltip:focus .info {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .info {
+      position: absolute;
+      bottom: 53px;
+      left: -85px;
+      display: block;
+      background: #286F8A;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      width: 300px;
+      font-size: 1rem;
+      line-height: 24px;
+      cursor: text;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate3d(0, -20px, 0);
+      transition: all 0.5s ease-out;
+    }
+
+    .info:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 14px;
+      bottom: -14px;
+      left: 0;
+    }
+
+    .info:after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      bottom: -5px;
+      left: 50%;
+      margin-left: -5px;
+      background: #286F8A;
+    }
+
+    .pronounce {
+      display: block;
+      background: #fff;
+      border-top: 1px solid rgb(226 232 240);
+      color: #286F8A;
+      padding: .5rem 1rem;
+      line-height: 16px;
+    }
+
+    .pronounce i {
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      vertical-align: middle;
+    }
+
+    .pronounce i:hover {
+      transform: scale(1.15) translate3d(0, 0, 0);
+      backface-visibility: none;
+    }
+
+    .text {
+      padding: .8rem 1rem;
+    }
+
+    .author {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <article class="quote">
+        <blockquote>
+          I know quite certainly that I myself have no special talent; curiosity,
+          <div class="tooltip">obsession
+            <div class="info">
+              <span class="pronounce">[əbˈseʃ(ə)n]
+                <i class='bx bx-volume-full'></i>
+              </span>
+              <p class="text">
+                <b>Obsession</b>, a persistent disturbing preoccupation with an often unreasonable idea or feeling.
+              </p>
+            </div>
+          </div>
+          and dogged endurance, combined with self-criticism have brought me to my ideas.
+        </blockquote>
+        <address class="author">Albert Einstein</address>
+      </article>
+    </div>
+  </main>
+</body>
+
+</html>
