@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 10 | CSS CHALLENGE</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+    :root {
+      --speed: 5s;
+      /* 60s for real */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      font-family: 'Open Sans', Helvetica, sans-serif;
+    }
+
+    .container {
+      width: 350px;
+      height: 350px;
+      background-color: #4C4C4C;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      border-radius: 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .watch {
+      background-color: #242424;
+      border-radius: 50%;
+      border: 7px solid #3A3A3A;
+      width: 212px;
+      height: 212px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .date {
+      font-size: .85rem;
+    }
+
+    .time {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: .15rem;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: .75rem;
+    }
+
+    .beat {
+      display: flex;
+      align-items: center;
+      column-gap: .25rem;
+    }
+
+    .beat i {
+      color: #F85B5B;
+      animation: beat .9s ease-in-out infinite;
+      font-size: .7rem;
+      margin-top: .25rem;
+    }
+
+    .point-set {
+      position: absolute;
+      height: 188px;
+      width: 188px;
+    }
+
+    .point-set-1 {
+      transform: rotate(0deg);
+    }
+
+    .point-set-2 {
+      transform: rotate(6deg);
+    }
+
+    .point-set-3 {
+      transform: rotate(12deg);
+    }
+
+    .point-set-4 {
+      transform: rotate(18deg);
+    }
+
+    .point-set-5 {
+      transform: rotate(24deg);
+    }
+
+    .point-set-6 {
+      transform: rotate(30deg);
+    }
+
+    .point-set-7 {
+      transform: rotate(36deg);
+    }
+
+    .point-set-8 {
+      transform: rotate(42deg);
+    }
+
+    .point-set-9 {
+      transform: rotate(48deg);
+    }
+
+    .point-set-10 {
+      transform: rotate(54deg);
+    }
+
+    .point-set-11 {
+      transform: rotate(60deg);
+    }
+
+    .point-set-12 {
+      transform: rotate(66deg);
+    }
+
+    .point-set-13 {
+      transform: rotate(72deg);
+    }
+
+    .point-set-14 {
+      transform: rotate(78deg);
+    }
+
+    .point-set-15 {
+      transform: rotate(84deg);
+    }
+
+    .point-1,
+    .point-2,
+    .point-3,
+    .point-4 {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      top: 0;
+      left: 93px;
+      background: #D3D3D3;
+      border-radius: 50%;
+    }
+
+    .point-2 {
+      top: 93px;
+      left: auto;
+      right: 0;
+    }
+
+    .point-3 {
+      top: auto;
+      bottom: 0;
+    }
+
+    .point-4 {
+      top: 93px;
+      left: 0;
+    }
+
+    .spinner {
+      position: absolute;
+      width: 202px;
+      height: 202px;
+      border-radius: 50%;
+    }
+
+    circle {
+      stroke: #F85B5B;
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 625;
+      animation: spinner var(--speed) linear infinite;
+      transform-origin: center center;
+      transform: rotate(-90deg);
+    }
+
+    @keyframes spinner {
+      from {
+        stroke-dashoffset: 625;
+        transform: rotate(-90deg) scaleY(1);
+      }
+
+      50% {
+        stroke-dashoffset: 0;
+        transform: rotate(-90deg) scaleY(1);
+      }
+
+      50.001% {
+        transform: rotate(-90deg) scaleY(-1);
+      }
+
+      to {
+        stroke-dashoffset: 625;
+        transform: rotate(-90deg) scaleY(-1);
+      }
+    }
+
+    @keyframes beat {
+      0% {
+        transform: scale(1);
+      }
+
+      35% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="watch">
+        <div class="point-set point-set-1">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-2">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-3">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-4">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-5">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-6">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-7">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-8">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-9">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-10">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-11">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-12">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-13">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-14">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+        <div class="point-set point-set-15">
+          <div class="point-1"></div>
+          <div class="point-2"></div>
+          <div class="point-3"></div>
+          <div class="point-4"></div>
+        </div>
+
+        <svg class="spinner" viewbox="0 0 202 202" xlmns="https://www.w3.org/2000/svg">
+          <circle cx="101" cy="101" r="99.5"></circle>
+        </svg>
+
+        <div>
+          <p class="date"></p>
+          <p class="time"></p>
+          <div class="bottom">
+            <span class="beat">
+              <i class="bx bxs-heart"></i>85
+            </span>
+            <p class="energy">1248 kcal</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const d = new Date();
+
+    const date = new Intl.DateTimeFormat("id", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }).format(d)
+
+    const time = new Intl.DateTimeFormat("en", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+    }).format(d)
+
+    const dateP = document.getElementsByClassName("date")[0],
+      timeP = document.getElementsByClassName("time")[0]
+
+    dateP.textContent = date;
+    timeP.textContent = time;
+  </script>
+</body>
+
+</html>
