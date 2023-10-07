@@ -1,0 +1,4249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 24 | CSS CHALLENGE</title>
+
+  <style>
+    main {
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+    }
+
+    .frame {
+      width: 300px;
+      height: 500px;
+      border-radius: 2px;
+      overflow: hidden;
+      font-family: "Open Sans", Helvetica, sans-serif;
+    }
+
+    .stage {
+      position: relative;
+      width: 300px;
+      height: 500px;
+      background: #1d4253;
+      background: linear-gradient(to bottom, #1d4253 0%, #6bb5c4 100%);
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      border-radius: 1px;
+      background: #fff;
+    }
+
+    .star-1 {
+      top: 405px;
+      left: 9px;
+      -webkit-animation: 2.3s flickr -0.7s infinite;
+      animation: 2.3s flickr -0.7s infinite;
+    }
+
+    .star-2 {
+      top: 424px;
+      left: 23px;
+      -webkit-animation: 2.2s flickr -1.6s infinite;
+      animation: 2.2s flickr -1.6s infinite;
+    }
+
+    .star-3 {
+      top: 410px;
+      left: 297px;
+      -webkit-animation: 2.2s flickr -1.8s infinite;
+      animation: 2.2s flickr -1.8s infinite;
+    }
+
+    .star-4 {
+      top: 324px;
+      left: 53px;
+      -webkit-animation: 4s flickr -1.3s infinite;
+      animation: 4s flickr -1.3s infinite;
+    }
+
+    .star-5 {
+      top: 190px;
+      left: 168px;
+      -webkit-animation: 3.7s flickr -1.6s infinite;
+      animation: 3.7s flickr -1.6s infinite;
+    }
+
+    .star-6 {
+      top: 399px;
+      left: 246px;
+      -webkit-animation: 2.7s flickr -0.1s infinite;
+      animation: 2.7s flickr -0.1s infinite;
+    }
+
+    .star-7 {
+      top: 247px;
+      left: 226px;
+      -webkit-animation: 3.9s flickr -1.2s infinite;
+      animation: 3.9s flickr -1.2s infinite;
+    }
+
+    .star-8 {
+      top: 9px;
+      left: 356px;
+      -webkit-animation: 2.9s flickr -0.8s infinite;
+      animation: 2.9s flickr -0.8s infinite;
+    }
+
+    .star-9 {
+      top: 228px;
+      left: 63px;
+      -webkit-animation: 2.4s flickr -0.2s infinite;
+      animation: 2.4s flickr -0.2s infinite;
+    }
+
+    .star-10 {
+      top: 92px;
+      left: 334px;
+      -webkit-animation: 2.5s flickr -1.3s infinite;
+      animation: 2.5s flickr -1.3s infinite;
+    }
+
+    .star-11 {
+      top: 378px;
+      left: 308px;
+      -webkit-animation: 3.2s flickr -1.3s infinite;
+      animation: 3.2s flickr -1.3s infinite;
+    }
+
+    .star-12 {
+      top: 166px;
+      left: 254px;
+      -webkit-animation: 3.9s flickr -0.9s infinite;
+      animation: 3.9s flickr -0.9s infinite;
+    }
+
+    .star-13 {
+      top: 294px;
+      left: 138px;
+      -webkit-animation: 2.1s flickr -0.2s infinite;
+      animation: 2.1s flickr -0.2s infinite;
+    }
+
+    .star-14 {
+      top: 425px;
+      left: 52px;
+      -webkit-animation: 3.7s flickr -1.5s infinite;
+      animation: 3.7s flickr -1.5s infinite;
+    }
+
+    .star-15 {
+      top: 390px;
+      left: 150px;
+      -webkit-animation: 3.8s flickr -0.1s infinite;
+      animation: 3.8s flickr -0.1s infinite;
+    }
+
+    .star-16 {
+      top: 480px;
+      left: 178px;
+      -webkit-animation: 2.4s flickr -0.5s infinite;
+      animation: 2.4s flickr -0.5s infinite;
+    }
+
+    .star-17 {
+      top: 170px;
+      left: 283px;
+      -webkit-animation: 3.6s flickr -1.1s infinite;
+      animation: 3.6s flickr -1.1s infinite;
+    }
+
+    .star-18 {
+      top: 258px;
+      left: 316px;
+      -webkit-animation: 2.4s flickr -1.5s infinite;
+      animation: 2.4s flickr -1.5s infinite;
+    }
+
+    .star-19 {
+      top: 199px;
+      left: 244px;
+      -webkit-animation: 2.9s flickr -0.9s infinite;
+      animation: 2.9s flickr -0.9s infinite;
+    }
+
+    .star-20 {
+      top: 163px;
+      left: 256px;
+      -webkit-animation: 2.5s flickr -0.3s infinite;
+      animation: 2.5s flickr -0.3s infinite;
+    }
+
+    .star-21 {
+      top: 343px;
+      left: 255px;
+      -webkit-animation: 2.6s flickr -1.8s infinite;
+      animation: 2.6s flickr -1.8s infinite;
+    }
+
+    .star-22 {
+      top: 238px;
+      left: 367px;
+      -webkit-animation: 2.7s flickr -0.8s infinite;
+      animation: 2.7s flickr -0.8s infinite;
+    }
+
+    .star-23 {
+      top: 215px;
+      left: 294px;
+      -webkit-animation: 3.1s flickr -0.9s infinite;
+      animation: 3.1s flickr -0.9s infinite;
+    }
+
+    .star-24 {
+      top: 47px;
+      left: 330px;
+      -webkit-animation: 3.8s flickr -2s infinite;
+      animation: 3.8s flickr -2s infinite;
+    }
+
+    .star-25 {
+      top: 409px;
+      left: 41px;
+      -webkit-animation: 3.7s flickr -1s infinite;
+      animation: 3.7s flickr -1s infinite;
+    }
+
+    .star-26 {
+      top: 403px;
+      left: 131px;
+      -webkit-animation: 3.2s flickr -0.3s infinite;
+      animation: 3.2s flickr -0.3s infinite;
+    }
+
+    .star-27 {
+      top: 203px;
+      left: 155px;
+      -webkit-animation: 3.8s flickr -0.5s infinite;
+      animation: 3.8s flickr -0.5s infinite;
+    }
+
+    .star-28 {
+      top: 169px;
+      left: 149px;
+      -webkit-animation: 4s flickr -0.4s infinite;
+      animation: 4s flickr -0.4s infinite;
+    }
+
+    .star-29 {
+      top: 130px;
+      left: 148px;
+      -webkit-animation: 2.7s flickr -1.3s infinite;
+      animation: 2.7s flickr -1.3s infinite;
+    }
+
+    .star-30 {
+      top: 244px;
+      left: 215px;
+      -webkit-animation: 2.8s flickr -0.8s infinite;
+      animation: 2.8s flickr -0.8s infinite;
+    }
+
+    .star-31 {
+      top: 162px;
+      left: 163px;
+      -webkit-animation: 2.4s flickr -0.2s infinite;
+      animation: 2.4s flickr -0.2s infinite;
+    }
+
+    .star-32 {
+      top: 251px;
+      left: 387px;
+      -webkit-animation: 3.7s flickr -1.7s infinite;
+      animation: 3.7s flickr -1.7s infinite;
+    }
+
+    .star-33 {
+      top: 150px;
+      left: 390px;
+      -webkit-animation: 2.4s flickr -1.3s infinite;
+      animation: 2.4s flickr -1.3s infinite;
+    }
+
+    .star-34 {
+      top: 11px;
+      left: 168px;
+      -webkit-animation: 2.1s flickr -0.7s infinite;
+      animation: 2.1s flickr -0.7s infinite;
+    }
+
+    .star-35 {
+      top: 64px;
+      left: 255px;
+      -webkit-animation: 3.8s flickr -1.1s infinite;
+      animation: 3.8s flickr -1.1s infinite;
+    }
+
+    .star-36 {
+      top: 355px;
+      left: 188px;
+      -webkit-animation: 3.7s flickr -0.8s infinite;
+      animation: 3.7s flickr -0.8s infinite;
+    }
+
+    .star-37 {
+      top: 284px;
+      left: 64px;
+      -webkit-animation: 3s flickr -0.2s infinite;
+      animation: 3s flickr -0.2s infinite;
+    }
+
+    .star-38 {
+      top: 9px;
+      left: 243px;
+      -webkit-animation: 4s flickr -2s infinite;
+      animation: 4s flickr -2s infinite;
+    }
+
+    .star-39 {
+      top: 118px;
+      left: 393px;
+      -webkit-animation: 3.3s flickr -1.3s infinite;
+      animation: 3.3s flickr -1.3s infinite;
+    }
+
+    .star-40 {
+      top: 328px;
+      left: 26px;
+      -webkit-animation: 2.8s flickr -2s infinite;
+      animation: 2.8s flickr -2s infinite;
+    }
+
+    .star-41 {
+      top: 296px;
+      left: 218px;
+      -webkit-animation: 2.4s flickr -1.7s infinite;
+      animation: 2.4s flickr -1.7s infinite;
+    }
+
+    .star-42 {
+      top: 198px;
+      left: 76px;
+      -webkit-animation: 2.1s flickr -1.7s infinite;
+      animation: 2.1s flickr -1.7s infinite;
+    }
+
+    .star-43 {
+      top: 167px;
+      left: 130px;
+      -webkit-animation: 2.9s flickr -2s infinite;
+      animation: 2.9s flickr -2s infinite;
+    }
+
+    .star-44 {
+      top: 405px;
+      left: 360px;
+      -webkit-animation: 2.6s flickr -1s infinite;
+      animation: 2.6s flickr -1s infinite;
+    }
+
+    .star-45 {
+      top: 356px;
+      left: 105px;
+      -webkit-animation: 2.9s flickr -0.5s infinite;
+      animation: 2.9s flickr -0.5s infinite;
+    }
+
+    .star-46 {
+      top: 283px;
+      left: 288px;
+      -webkit-animation: 3s flickr -0.4s infinite;
+      animation: 3s flickr -0.4s infinite;
+    }
+
+    .star-47 {
+      top: 287px;
+      left: 305px;
+      -webkit-animation: 3.5s flickr -1.8s infinite;
+      animation: 3.5s flickr -1.8s infinite;
+    }
+
+    .star-48 {
+      top: 425px;
+      left: 318px;
+      -webkit-animation: 3.7s flickr -1s infinite;
+      animation: 3.7s flickr -1s infinite;
+    }
+
+    .star-49 {
+      top: 454px;
+      left: 333px;
+      -webkit-animation: 2.7s flickr -1.2s infinite;
+      animation: 2.7s flickr -1.2s infinite;
+    }
+
+    .star-50 {
+      top: 133px;
+      left: 61px;
+      -webkit-animation: 3.8s flickr -1.6s infinite;
+      animation: 3.8s flickr -1.6s infinite;
+    }
+
+    .star-51 {
+      top: 394px;
+      left: 100px;
+      -webkit-animation: 4s flickr -0.1s infinite;
+      animation: 4s flickr -0.1s infinite;
+    }
+
+    .star-52 {
+      top: 361px;
+      left: 382px;
+      -webkit-animation: 4s flickr -2s infinite;
+      animation: 4s flickr -2s infinite;
+    }
+
+    .star-53 {
+      top: 27px;
+      left: 312px;
+      -webkit-animation: 2.2s flickr -0.9s infinite;
+      animation: 2.2s flickr -0.9s infinite;
+    }
+
+    .star-54 {
+      top: 390px;
+      left: 5px;
+      -webkit-animation: 2.4s flickr -0.9s infinite;
+      animation: 2.4s flickr -0.9s infinite;
+    }
+
+    .star-55 {
+      top: 412px;
+      left: 284px;
+      -webkit-animation: 3.6s flickr -1.9s infinite;
+      animation: 3.6s flickr -1.9s infinite;
+    }
+
+    .star-56 {
+      top: 330px;
+      left: 224px;
+      -webkit-animation: 3.1s flickr -0.4s infinite;
+      animation: 3.1s flickr -0.4s infinite;
+    }
+
+    .star-57 {
+      top: 402px;
+      left: 193px;
+      -webkit-animation: 2.7s flickr -0.2s infinite;
+      animation: 2.7s flickr -0.2s infinite;
+    }
+
+    .star-58 {
+      top: 102px;
+      left: 109px;
+      -webkit-animation: 3.3s flickr -1.3s infinite;
+      animation: 3.3s flickr -1.3s infinite;
+    }
+
+    .star-59 {
+      top: 391px;
+      left: 152px;
+      -webkit-animation: 2.9s flickr -1.7s infinite;
+      animation: 2.9s flickr -1.7s infinite;
+    }
+
+    .star-60 {
+      top: 318px;
+      left: 364px;
+      -webkit-animation: 3.4s flickr -1.3s infinite;
+      animation: 3.4s flickr -1.3s infinite;
+    }
+
+    .star-61 {
+      top: 146px;
+      left: 362px;
+      -webkit-animation: 3.1s flickr -0.4s infinite;
+      animation: 3.1s flickr -0.4s infinite;
+    }
+
+    .star-62 {
+      top: 148px;
+      left: 397px;
+      -webkit-animation: 3.3s flickr -0.4s infinite;
+      animation: 3.3s flickr -0.4s infinite;
+    }
+
+    .star-63 {
+      top: 153px;
+      left: 87px;
+      -webkit-animation: 2.9s flickr -0.7s infinite;
+      animation: 2.9s flickr -0.7s infinite;
+    }
+
+    .star-64 {
+      top: 133px;
+      left: 92px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-65 {
+      top: 366px;
+      left: 170px;
+      -webkit-animation: 2.7s flickr -1.2s infinite;
+      animation: 2.7s flickr -1.2s infinite;
+    }
+
+    .star-66 {
+      top: 478px;
+      left: 257px;
+      -webkit-animation: 2.8s flickr -0.7s infinite;
+      animation: 2.8s flickr -0.7s infinite;
+    }
+
+    .star-67 {
+      top: 261px;
+      left: 15px;
+      -webkit-animation: 2.2s flickr -0.7s infinite;
+      animation: 2.2s flickr -0.7s infinite;
+    }
+
+    .star-68 {
+      top: 337px;
+      left: 231px;
+      -webkit-animation: 3.1s flickr -0.4s infinite;
+      animation: 3.1s flickr -0.4s infinite;
+    }
+
+    .star-69 {
+      top: 325px;
+      left: 206px;
+      -webkit-animation: 3s flickr -0.4s infinite;
+      animation: 3s flickr -0.4s infinite;
+    }
+
+    .star-70 {
+      top: 348px;
+      left: 143px;
+      -webkit-animation: 2.7s flickr -0.3s infinite;
+      animation: 2.7s flickr -0.3s infinite;
+    }
+
+    .star-71 {
+      top: 83px;
+      left: 69px;
+      -webkit-animation: 2.3s flickr -0.2s infinite;
+      animation: 2.3s flickr -0.2s infinite;
+    }
+
+    .star-72 {
+      top: 408px;
+      left: 301px;
+      -webkit-animation: 2.1s flickr -0.2s infinite;
+      animation: 2.1s flickr -0.2s infinite;
+    }
+
+    .star-73 {
+      top: 56px;
+      left: 311px;
+      -webkit-animation: 4s flickr -1s infinite;
+      animation: 4s flickr -1s infinite;
+    }
+
+    .star-74 {
+      top: 207px;
+      left: 320px;
+      -webkit-animation: 4s flickr -0.1s infinite;
+      animation: 4s flickr -0.1s infinite;
+    }
+
+    .star-75 {
+      top: 448px;
+      left: 13px;
+      -webkit-animation: 3s flickr -1.1s infinite;
+      animation: 3s flickr -1.1s infinite;
+    }
+
+    .star-76 {
+      top: 92px;
+      left: 156px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-77 {
+      top: 483px;
+      left: 280px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-78 {
+      top: 412px;
+      left: 128px;
+      -webkit-animation: 2.3s flickr -0.1s infinite;
+      animation: 2.3s flickr -0.1s infinite;
+    }
+
+    .star-79 {
+      top: 480px;
+      left: 138px;
+      -webkit-animation: 3.4s flickr -1.8s infinite;
+      animation: 3.4s flickr -1.8s infinite;
+    }
+
+    .star-80 {
+      top: 377px;
+      left: 330px;
+      -webkit-animation: 3.8s flickr -1.6s infinite;
+      animation: 3.8s flickr -1.6s infinite;
+    }
+
+    .star-81 {
+      top: 499px;
+      left: 254px;
+      -webkit-animation: 2.6s flickr -1.8s infinite;
+      animation: 2.6s flickr -1.8s infinite;
+    }
+
+    .star-82 {
+      top: 201px;
+      left: 53px;
+      -webkit-animation: 3.9s flickr -0.7s infinite;
+      animation: 3.9s flickr -0.7s infinite;
+    }
+
+    .star-83 {
+      top: 345px;
+      left: 328px;
+      -webkit-animation: 3.1s flickr -0.6s infinite;
+      animation: 3.1s flickr -0.6s infinite;
+    }
+
+    .star-84 {
+      top: 461px;
+      left: 381px;
+      -webkit-animation: 3.7s flickr -0.7s infinite;
+      animation: 3.7s flickr -0.7s infinite;
+    }
+
+    .star-85 {
+      top: 265px;
+      left: 196px;
+      -webkit-animation: 3.6s flickr -0.7s infinite;
+      animation: 3.6s flickr -0.7s infinite;
+    }
+
+    .star-86 {
+      top: 493px;
+      left: 292px;
+      -webkit-animation: 3.8s flickr -1.7s infinite;
+      animation: 3.8s flickr -1.7s infinite;
+    }
+
+    .star-87 {
+      top: 368px;
+      left: 366px;
+      -webkit-animation: 3.3s flickr -0.7s infinite;
+      animation: 3.3s flickr -0.7s infinite;
+    }
+
+    .star-88 {
+      top: 265px;
+      left: 128px;
+      -webkit-animation: 4s flickr -2s infinite;
+      animation: 4s flickr -2s infinite;
+    }
+
+    .star-89 {
+      top: 251px;
+      left: 375px;
+      -webkit-animation: 2.3s flickr -0.7s infinite;
+      animation: 2.3s flickr -0.7s infinite;
+    }
+
+    .star-90 {
+      top: 452px;
+      left: 329px;
+      -webkit-animation: 3.6s flickr -1.3s infinite;
+      animation: 3.6s flickr -1.3s infinite;
+    }
+
+    .star-91 {
+      top: 404px;
+      left: 383px;
+      -webkit-animation: 3.8s flickr -0.3s infinite;
+      animation: 3.8s flickr -0.3s infinite;
+    }
+
+    .star-92 {
+      top: 173px;
+      left: 115px;
+      -webkit-animation: 3.9s flickr -1.6s infinite;
+      animation: 3.9s flickr -1.6s infinite;
+    }
+
+    .star-93 {
+      top: 347px;
+      left: 134px;
+      -webkit-animation: 2.3s flickr -1.4s infinite;
+      animation: 2.3s flickr -1.4s infinite;
+    }
+
+    .star-94 {
+      top: 488px;
+      left: 306px;
+      -webkit-animation: 2.7s flickr -1s infinite;
+      animation: 2.7s flickr -1s infinite;
+    }
+
+    .star-95 {
+      top: 97px;
+      left: 311px;
+      -webkit-animation: 2.2s flickr -0.4s infinite;
+      animation: 2.2s flickr -0.4s infinite;
+    }
+
+    .star-96 {
+      top: 32px;
+      left: 200px;
+      -webkit-animation: 2.8s flickr -2s infinite;
+      animation: 2.8s flickr -2s infinite;
+    }
+
+    .star-97 {
+      top: 475px;
+      left: 63px;
+      -webkit-animation: 3s flickr -0.9s infinite;
+      animation: 3s flickr -0.9s infinite;
+    }
+
+    .star-98 {
+      top: 272px;
+      left: 376px;
+      -webkit-animation: 3s flickr -1.4s infinite;
+      animation: 3s flickr -1.4s infinite;
+    }
+
+    .star-99 {
+      top: 199px;
+      left: 119px;
+      -webkit-animation: 3.5s flickr -1.2s infinite;
+      animation: 3.5s flickr -1.2s infinite;
+    }
+
+    .star-100 {
+      top: 74px;
+      left: 70px;
+      -webkit-animation: 3.9s flickr -1.3s infinite;
+      animation: 3.9s flickr -1.3s infinite;
+    }
+
+    .star-101 {
+      top: 253px;
+      left: 296px;
+      -webkit-animation: 2.9s flickr -1s infinite;
+      animation: 2.9s flickr -1s infinite;
+    }
+
+    .star-102 {
+      top: 500px;
+      left: 330px;
+      -webkit-animation: 3.7s flickr -0.2s infinite;
+      animation: 3.7s flickr -0.2s infinite;
+    }
+
+    .star-103 {
+      top: 41px;
+      left: 346px;
+      -webkit-animation: 2.5s flickr -1.6s infinite;
+      animation: 2.5s flickr -1.6s infinite;
+    }
+
+    .star-104 {
+      top: 98px;
+      left: 390px;
+      -webkit-animation: 3.7s flickr -1.1s infinite;
+      animation: 3.7s flickr -1.1s infinite;
+    }
+
+    .star-105 {
+      top: 264px;
+      left: 258px;
+      -webkit-animation: 3.2s flickr -1.2s infinite;
+      animation: 3.2s flickr -1.2s infinite;
+    }
+
+    .star-106 {
+      top: 443px;
+      left: 366px;
+      -webkit-animation: 2.8s flickr -0.9s infinite;
+      animation: 2.8s flickr -0.9s infinite;
+    }
+
+    .star-107 {
+      top: 107px;
+      left: 123px;
+      -webkit-animation: 3.8s flickr -0.1s infinite;
+      animation: 3.8s flickr -0.1s infinite;
+    }
+
+    .star-108 {
+      top: 292px;
+      left: 271px;
+      -webkit-animation: 3s flickr -1.3s infinite;
+      animation: 3s flickr -1.3s infinite;
+    }
+
+    .star-109 {
+      top: 79px;
+      left: 327px;
+      -webkit-animation: 2.9s flickr -1.4s infinite;
+      animation: 2.9s flickr -1.4s infinite;
+    }
+
+    .star-110 {
+      top: 220px;
+      left: 355px;
+      -webkit-animation: 2.1s flickr -0.9s infinite;
+      animation: 2.1s flickr -0.9s infinite;
+    }
+
+    .star-111 {
+      top: 363px;
+      left: 384px;
+      -webkit-animation: 2.4s flickr -1.4s infinite;
+      animation: 2.4s flickr -1.4s infinite;
+    }
+
+    .star-112 {
+      top: 97px;
+      left: 3px;
+      -webkit-animation: 3.7s flickr -0.9s infinite;
+      animation: 3.7s flickr -0.9s infinite;
+    }
+
+    .star-113 {
+      top: 141px;
+      left: 28px;
+      -webkit-animation: 3.9s flickr -0.5s infinite;
+      animation: 3.9s flickr -0.5s infinite;
+    }
+
+    .star-114 {
+      top: 101px;
+      left: 87px;
+      -webkit-animation: 2.1s flickr -1.2s infinite;
+      animation: 2.1s flickr -1.2s infinite;
+    }
+
+    .star-115 {
+      top: 207px;
+      left: 73px;
+      -webkit-animation: 3.8s flickr -1s infinite;
+      animation: 3.8s flickr -1s infinite;
+    }
+
+    .star-116 {
+      top: 326px;
+      left: 72px;
+      -webkit-animation: 2.3s flickr -0.9s infinite;
+      animation: 2.3s flickr -0.9s infinite;
+    }
+
+    .star-117 {
+      top: 4px;
+      left: 244px;
+      -webkit-animation: 2.8s flickr -0.4s infinite;
+      animation: 2.8s flickr -0.4s infinite;
+    }
+
+    .star-118 {
+      top: 203px;
+      left: 34px;
+      -webkit-animation: 3.2s flickr -0.9s infinite;
+      animation: 3.2s flickr -0.9s infinite;
+    }
+
+    .star-119 {
+      top: 184px;
+      left: 18px;
+      -webkit-animation: 4s flickr -1.5s infinite;
+      animation: 4s flickr -1.5s infinite;
+    }
+
+    .star-120 {
+      top: 212px;
+      left: 77px;
+      -webkit-animation: 3.8s flickr -1.9s infinite;
+      animation: 3.8s flickr -1.9s infinite;
+    }
+
+    .star-121 {
+      top: 428px;
+      left: 284px;
+      -webkit-animation: 3.6s flickr -0.6s infinite;
+      animation: 3.6s flickr -0.6s infinite;
+    }
+
+    .star-122 {
+      top: 324px;
+      left: 356px;
+      -webkit-animation: 3s flickr -0.8s infinite;
+      animation: 3s flickr -0.8s infinite;
+    }
+
+    .star-123 {
+      top: 230px;
+      left: 15px;
+      -webkit-animation: 3.3s flickr -0.8s infinite;
+      animation: 3.3s flickr -0.8s infinite;
+    }
+
+    .star-124 {
+      top: 227px;
+      left: 116px;
+      -webkit-animation: 2.2s flickr -1.9s infinite;
+      animation: 2.2s flickr -1.9s infinite;
+    }
+
+    .star-125 {
+      top: 46px;
+      left: 101px;
+      -webkit-animation: 2.8s flickr -0.2s infinite;
+      animation: 2.8s flickr -0.2s infinite;
+    }
+
+    .star-126 {
+      top: 109px;
+      left: 214px;
+      -webkit-animation: 2.2s flickr -0.5s infinite;
+      animation: 2.2s flickr -0.5s infinite;
+    }
+
+    .star-127 {
+      top: 137px;
+      left: 336px;
+      -webkit-animation: 3.2s flickr -1.4s infinite;
+      animation: 3.2s flickr -1.4s infinite;
+    }
+
+    .star-128 {
+      top: 452px;
+      left: 143px;
+      -webkit-animation: 3.7s flickr -0.7s infinite;
+      animation: 3.7s flickr -0.7s infinite;
+    }
+
+    .star-129 {
+      top: 487px;
+      left: 117px;
+      -webkit-animation: 2.1s flickr -0.7s infinite;
+      animation: 2.1s flickr -0.7s infinite;
+    }
+
+    .star-130 {
+      top: 121px;
+      left: 104px;
+      -webkit-animation: 2.4s flickr -0.2s infinite;
+      animation: 2.4s flickr -0.2s infinite;
+    }
+
+    .star-131 {
+      top: 440px;
+      left: 377px;
+      -webkit-animation: 3.3s flickr -1.7s infinite;
+      animation: 3.3s flickr -1.7s infinite;
+    }
+
+    .star-132 {
+      top: 354px;
+      left: 174px;
+      -webkit-animation: 3.7s flickr -1.6s infinite;
+      animation: 3.7s flickr -1.6s infinite;
+    }
+
+    .star-133 {
+      top: 130px;
+      left: 60px;
+      -webkit-animation: 3.5s flickr -0.8s infinite;
+      animation: 3.5s flickr -0.8s infinite;
+    }
+
+    .star-134 {
+      top: 223px;
+      left: 70px;
+      -webkit-animation: 2.6s flickr -1.2s infinite;
+      animation: 2.6s flickr -1.2s infinite;
+    }
+
+    .star-135 {
+      top: 240px;
+      left: 327px;
+      -webkit-animation: 2.6s flickr -0.2s infinite;
+      animation: 2.6s flickr -0.2s infinite;
+    }
+
+    .star-136 {
+      top: 305px;
+      left: 163px;
+      -webkit-animation: 3.7s flickr -0.6s infinite;
+      animation: 3.7s flickr -0.6s infinite;
+    }
+
+    .star-137 {
+      top: 94px;
+      left: 399px;
+      -webkit-animation: 3.2s flickr -1.1s infinite;
+      animation: 3.2s flickr -1.1s infinite;
+    }
+
+    .star-138 {
+      top: 427px;
+      left: 351px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-139 {
+      top: 442px;
+      left: 55px;
+      -webkit-animation: 3.5s flickr -1s infinite;
+      animation: 3.5s flickr -1s infinite;
+    }
+
+    .star-140 {
+      top: 370px;
+      left: 297px;
+      -webkit-animation: 3.5s flickr -1.2s infinite;
+      animation: 3.5s flickr -1.2s infinite;
+    }
+
+    .star-141 {
+      top: 186px;
+      left: 364px;
+      -webkit-animation: 3.2s flickr -1.7s infinite;
+      animation: 3.2s flickr -1.7s infinite;
+    }
+
+    .star-142 {
+      top: 159px;
+      left: 378px;
+      -webkit-animation: 3s flickr -1.2s infinite;
+      animation: 3s flickr -1.2s infinite;
+    }
+
+    .star-143 {
+      top: 349px;
+      left: 216px;
+      -webkit-animation: 2.3s flickr -1s infinite;
+      animation: 2.3s flickr -1s infinite;
+    }
+
+    .star-144 {
+      top: 73px;
+      left: 240px;
+      -webkit-animation: 3.8s flickr -1.3s infinite;
+      animation: 3.8s flickr -1.3s infinite;
+    }
+
+    .star-145 {
+      top: 195px;
+      left: 161px;
+      -webkit-animation: 3.7s flickr -0.9s infinite;
+      animation: 3.7s flickr -0.9s infinite;
+    }
+
+    .star-146 {
+      top: 337px;
+      left: 394px;
+      -webkit-animation: 2.7s flickr -2s infinite;
+      animation: 2.7s flickr -2s infinite;
+    }
+
+    .star-147 {
+      top: 63px;
+      left: 73px;
+      -webkit-animation: 2.2s flickr -0.2s infinite;
+      animation: 2.2s flickr -0.2s infinite;
+    }
+
+    .star-148 {
+      top: 93px;
+      left: 263px;
+      -webkit-animation: 2.3s flickr -0.5s infinite;
+      animation: 2.3s flickr -0.5s infinite;
+    }
+
+    .star-149 {
+      top: 24px;
+      left: 387px;
+      -webkit-animation: 2.2s flickr -1.2s infinite;
+      animation: 2.2s flickr -1.2s infinite;
+    }
+
+    .star-150 {
+      top: 123px;
+      left: 122px;
+      -webkit-animation: 2.8s flickr -0.7s infinite;
+      animation: 2.8s flickr -0.7s infinite;
+    }
+
+    .star-151 {
+      top: 295px;
+      left: 173px;
+      -webkit-animation: 4s flickr -0.5s infinite;
+      animation: 4s flickr -0.5s infinite;
+    }
+
+    .star-152 {
+      top: 198px;
+      left: 233px;
+      -webkit-animation: 4s flickr -1s infinite;
+      animation: 4s flickr -1s infinite;
+    }
+
+    .star-153 {
+      top: 241px;
+      left: 229px;
+      -webkit-animation: 2.2s flickr -0.7s infinite;
+      animation: 2.2s flickr -0.7s infinite;
+    }
+
+    .star-154 {
+      top: 108px;
+      left: 301px;
+      -webkit-animation: 2.8s flickr -1.9s infinite;
+      animation: 2.8s flickr -1.9s infinite;
+    }
+
+    .star-155 {
+      top: 410px;
+      left: 373px;
+      -webkit-animation: 2.5s flickr -0.8s infinite;
+      animation: 2.5s flickr -0.8s infinite;
+    }
+
+    .star-156 {
+      top: 106px;
+      left: 291px;
+      -webkit-animation: 3.7s flickr -0.5s infinite;
+      animation: 3.7s flickr -0.5s infinite;
+    }
+
+    .star-157 {
+      top: 297px;
+      left: 261px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-158 {
+      top: 14px;
+      left: 385px;
+      -webkit-animation: 2.1s flickr -0.5s infinite;
+      animation: 2.1s flickr -0.5s infinite;
+    }
+
+    .star-159 {
+      top: 157px;
+      left: 151px;
+      -webkit-animation: 3.5s flickr -1.7s infinite;
+      animation: 3.5s flickr -1.7s infinite;
+    }
+
+    .star-160 {
+      top: 180px;
+      left: 311px;
+      -webkit-animation: 2.9s flickr -1.8s infinite;
+      animation: 2.9s flickr -1.8s infinite;
+    }
+
+    .star-161 {
+      top: 38px;
+      left: 117px;
+      -webkit-animation: 2.4s flickr -0.4s infinite;
+      animation: 2.4s flickr -0.4s infinite;
+    }
+
+    .star-162 {
+      top: 222px;
+      left: 180px;
+      -webkit-animation: 2.7s flickr -1s infinite;
+      animation: 2.7s flickr -1s infinite;
+    }
+
+    .star-163 {
+      top: 103px;
+      left: 122px;
+      -webkit-animation: 2.7s flickr -1.4s infinite;
+      animation: 2.7s flickr -1.4s infinite;
+    }
+
+    .star-164 {
+      top: 352px;
+      left: 150px;
+      -webkit-animation: 3.4s flickr -0.9s infinite;
+      animation: 3.4s flickr -0.9s infinite;
+    }
+
+    .star-165 {
+      top: 286px;
+      left: 273px;
+      -webkit-animation: 2.1s flickr -1.1s infinite;
+      animation: 2.1s flickr -1.1s infinite;
+    }
+
+    .star-166 {
+      top: 271px;
+      left: 121px;
+      -webkit-animation: 2.6s flickr -0.2s infinite;
+      animation: 2.6s flickr -0.2s infinite;
+    }
+
+    .star-167 {
+      top: 208px;
+      left: 315px;
+      -webkit-animation: 3.9s flickr -0.7s infinite;
+      animation: 3.9s flickr -0.7s infinite;
+    }
+
+    .star-168 {
+      top: 240px;
+      left: 16px;
+      -webkit-animation: 2.5s flickr -1s infinite;
+      animation: 2.5s flickr -1s infinite;
+    }
+
+    .star-169 {
+      top: 440px;
+      left: 184px;
+      -webkit-animation: 3s flickr -0.1s infinite;
+      animation: 3s flickr -0.1s infinite;
+    }
+
+    .star-170 {
+      top: 317px;
+      left: 285px;
+      -webkit-animation: 3.2s flickr -1.2s infinite;
+      animation: 3.2s flickr -1.2s infinite;
+    }
+
+    .star-171 {
+      top: 127px;
+      left: 99px;
+      -webkit-animation: 2.9s flickr -1.1s infinite;
+      animation: 2.9s flickr -1.1s infinite;
+    }
+
+    .star-172 {
+      top: 329px;
+      left: 326px;
+      -webkit-animation: 2.8s flickr -0.2s infinite;
+      animation: 2.8s flickr -0.2s infinite;
+    }
+
+    .star-173 {
+      top: 429px;
+      left: 15px;
+      -webkit-animation: 2.7s flickr -1.8s infinite;
+      animation: 2.7s flickr -1.8s infinite;
+    }
+
+    .star-174 {
+      top: 428px;
+      left: 88px;
+      -webkit-animation: 3.5s flickr -1.7s infinite;
+      animation: 3.5s flickr -1.7s infinite;
+    }
+
+    .star-175 {
+      top: 227px;
+      left: 187px;
+      -webkit-animation: 2.9s flickr -0.7s infinite;
+      animation: 2.9s flickr -0.7s infinite;
+    }
+
+    .star-176 {
+      top: 161px;
+      left: 143px;
+      -webkit-animation: 4s flickr -1.1s infinite;
+      animation: 4s flickr -1.1s infinite;
+    }
+
+    .star-177 {
+      top: 240px;
+      left: 232px;
+      -webkit-animation: 3.2s flickr -0.2s infinite;
+      animation: 3.2s flickr -0.2s infinite;
+    }
+
+    .star-178 {
+      top: 315px;
+      left: 68px;
+      -webkit-animation: 4s flickr -1.7s infinite;
+      animation: 4s flickr -1.7s infinite;
+    }
+
+    .star-179 {
+      top: 246px;
+      left: 183px;
+      -webkit-animation: 3.9s flickr -1.5s infinite;
+      animation: 3.9s flickr -1.5s infinite;
+    }
+
+    .star-180 {
+      top: 384px;
+      left: 252px;
+      -webkit-animation: 2.7s flickr -0.8s infinite;
+      animation: 2.7s flickr -0.8s infinite;
+    }
+
+    .star-181 {
+      top: 357px;
+      left: 113px;
+      -webkit-animation: 3s flickr -1s infinite;
+      animation: 3s flickr -1s infinite;
+    }
+
+    .star-182 {
+      top: 265px;
+      left: 38px;
+      -webkit-animation: 3.3s flickr -1.5s infinite;
+      animation: 3.3s flickr -1.5s infinite;
+    }
+
+    .star-183 {
+      top: 319px;
+      left: 113px;
+      -webkit-animation: 2.3s flickr -1.5s infinite;
+      animation: 2.3s flickr -1.5s infinite;
+    }
+
+    .star-184 {
+      top: 39px;
+      left: 125px;
+      -webkit-animation: 2.6s flickr -0.5s infinite;
+      animation: 2.6s flickr -0.5s infinite;
+    }
+
+    .star-185 {
+      top: 479px;
+      left: 297px;
+      -webkit-animation: 2.7s flickr -0.4s infinite;
+      animation: 2.7s flickr -0.4s infinite;
+    }
+
+    .star-186 {
+      top: 275px;
+      left: 83px;
+      -webkit-animation: 3.1s flickr -1.1s infinite;
+      animation: 3.1s flickr -1.1s infinite;
+    }
+
+    .star-187 {
+      top: 115px;
+      left: 230px;
+      -webkit-animation: 2.1s flickr -1.1s infinite;
+      animation: 2.1s flickr -1.1s infinite;
+    }
+
+    .star-188 {
+      top: 217px;
+      left: 273px;
+      -webkit-animation: 2.2s flickr -0.4s infinite;
+      animation: 2.2s flickr -0.4s infinite;
+    }
+
+    .star-189 {
+      top: 344px;
+      left: 357px;
+      -webkit-animation: 3.9s flickr -1.3s infinite;
+      animation: 3.9s flickr -1.3s infinite;
+    }
+
+    .star-190 {
+      top: 413px;
+      left: 46px;
+      -webkit-animation: 3.5s flickr -0.4s infinite;
+      animation: 3.5s flickr -0.4s infinite;
+    }
+
+    .star-191 {
+      top: 212px;
+      left: 327px;
+      -webkit-animation: 3.1s flickr -0.6s infinite;
+      animation: 3.1s flickr -0.6s infinite;
+    }
+
+    .star-192 {
+      top: 244px;
+      left: 238px;
+      -webkit-animation: 3.8s flickr -0.3s infinite;
+      animation: 3.8s flickr -0.3s infinite;
+    }
+
+    .star-193 {
+      top: 383px;
+      left: 174px;
+      -webkit-animation: 2.2s flickr -1.8s infinite;
+      animation: 2.2s flickr -1.8s infinite;
+    }
+
+    .star-194 {
+      top: 349px;
+      left: 73px;
+      -webkit-animation: 3.7s flickr -0.8s infinite;
+      animation: 3.7s flickr -0.8s infinite;
+    }
+
+    .star-195 {
+      top: 255px;
+      left: 205px;
+      -webkit-animation: 3.4s flickr -1.4s infinite;
+      animation: 3.4s flickr -1.4s infinite;
+    }
+
+    .star-196 {
+      top: 164px;
+      left: 151px;
+      -webkit-animation: 3.2s flickr -0.8s infinite;
+      animation: 3.2s flickr -0.8s infinite;
+    }
+
+    .star-197 {
+      top: 349px;
+      left: 47px;
+      -webkit-animation: 4s flickr -0.9s infinite;
+      animation: 4s flickr -0.9s infinite;
+    }
+
+    .star-198 {
+      top: 269px;
+      left: 229px;
+      -webkit-animation: 3.5s flickr -1.6s infinite;
+      animation: 3.5s flickr -1.6s infinite;
+    }
+
+    .star-199 {
+      top: 191px;
+      left: 316px;
+      -webkit-animation: 2.4s flickr -1.2s infinite;
+      animation: 2.4s flickr -1.2s infinite;
+    }
+
+    .star-200 {
+      top: 499px;
+      left: 359px;
+      -webkit-animation: 3.6s flickr -1.5s infinite;
+      animation: 3.6s flickr -1.5s infinite;
+    }
+
+    .star-201 {
+      top: 322px;
+      left: 267px;
+      -webkit-animation: 3.4s flickr -1.3s infinite;
+      animation: 3.4s flickr -1.3s infinite;
+    }
+
+    .star-202 {
+      top: 354px;
+      left: 117px;
+      -webkit-animation: 2.5s flickr -0.1s infinite;
+      animation: 2.5s flickr -0.1s infinite;
+    }
+
+    .star-203 {
+      top: 361px;
+      left: 217px;
+      -webkit-animation: 3.4s flickr -1.5s infinite;
+      animation: 3.4s flickr -1.5s infinite;
+    }
+
+    .star-204 {
+      top: 185px;
+      left: 381px;
+      -webkit-animation: 3.1s flickr -1s infinite;
+      animation: 3.1s flickr -1s infinite;
+    }
+
+    .star-205 {
+      top: 436px;
+      left: 74px;
+      -webkit-animation: 3.2s flickr -0.9s infinite;
+      animation: 3.2s flickr -0.9s infinite;
+    }
+
+    .star-206 {
+      top: 199px;
+      left: 224px;
+      -webkit-animation: 2.8s flickr -1.6s infinite;
+      animation: 2.8s flickr -1.6s infinite;
+    }
+
+    .star-207 {
+      top: 142px;
+      left: 60px;
+      -webkit-animation: 3.2s flickr -0.3s infinite;
+      animation: 3.2s flickr -0.3s infinite;
+    }
+
+    .star-208 {
+      top: 296px;
+      left: 257px;
+      -webkit-animation: 2.3s flickr -1.1s infinite;
+      animation: 2.3s flickr -1.1s infinite;
+    }
+
+    .star-209 {
+      top: 196px;
+      left: 161px;
+      -webkit-animation: 3.8s flickr -1.3s infinite;
+      animation: 3.8s flickr -1.3s infinite;
+    }
+
+    .star-210 {
+      top: 216px;
+      left: 74px;
+      -webkit-animation: 2.2s flickr -1.1s infinite;
+      animation: 2.2s flickr -1.1s infinite;
+    }
+
+    .star-211 {
+      top: 166px;
+      left: 200px;
+      -webkit-animation: 2.3s flickr -1.8s infinite;
+      animation: 2.3s flickr -1.8s infinite;
+    }
+
+    .star-212 {
+      top: 347px;
+      left: 7px;
+      -webkit-animation: 2.4s flickr -0.3s infinite;
+      animation: 2.4s flickr -0.3s infinite;
+    }
+
+    .star-213 {
+      top: 180px;
+      left: 301px;
+      -webkit-animation: 3.6s flickr -1.2s infinite;
+      animation: 3.6s flickr -1.2s infinite;
+    }
+
+    .star-214 {
+      top: 316px;
+      left: 312px;
+      -webkit-animation: 2.3s flickr -0.8s infinite;
+      animation: 2.3s flickr -0.8s infinite;
+    }
+
+    .star-215 {
+      top: 47px;
+      left: 36px;
+      -webkit-animation: 2.6s flickr -1.9s infinite;
+      animation: 2.6s flickr -1.9s infinite;
+    }
+
+    .star-216 {
+      top: 348px;
+      left: 235px;
+      -webkit-animation: 4s flickr -0.4s infinite;
+      animation: 4s flickr -0.4s infinite;
+    }
+
+    .star-217 {
+      top: 46px;
+      left: 43px;
+      -webkit-animation: 3.7s flickr -0.3s infinite;
+      animation: 3.7s flickr -0.3s infinite;
+    }
+
+    .star-218 {
+      top: 316px;
+      left: 202px;
+      -webkit-animation: 3.8s flickr -0.4s infinite;
+      animation: 3.8s flickr -0.4s infinite;
+    }
+
+    .star-219 {
+      top: 77px;
+      left: 16px;
+      -webkit-animation: 3.2s flickr -0.4s infinite;
+      animation: 3.2s flickr -0.4s infinite;
+    }
+
+    .star-220 {
+      top: 281px;
+      left: 392px;
+      -webkit-animation: 2.5s flickr -1.6s infinite;
+      animation: 2.5s flickr -1.6s infinite;
+    }
+
+    .star-221 {
+      top: 14px;
+      left: 136px;
+      -webkit-animation: 3.1s flickr -1s infinite;
+      animation: 3.1s flickr -1s infinite;
+    }
+
+    .star-222 {
+      top: 283px;
+      left: 192px;
+      -webkit-animation: 3.1s flickr -1.1s infinite;
+      animation: 3.1s flickr -1.1s infinite;
+    }
+
+    .star-223 {
+      top: 358px;
+      left: 242px;
+      -webkit-animation: 3.3s flickr -0.6s infinite;
+      animation: 3.3s flickr -0.6s infinite;
+    }
+
+    .star-224 {
+      top: 6px;
+      left: 38px;
+      -webkit-animation: 2.3s flickr -1.4s infinite;
+      animation: 2.3s flickr -1.4s infinite;
+    }
+
+    .star-225 {
+      top: 42px;
+      left: 56px;
+      -webkit-animation: 3.4s flickr -0.5s infinite;
+      animation: 3.4s flickr -0.5s infinite;
+    }
+
+    .star-226 {
+      top: 247px;
+      left: 330px;
+      -webkit-animation: 3.5s flickr -1.7s infinite;
+      animation: 3.5s flickr -1.7s infinite;
+    }
+
+    .star-227 {
+      top: 140px;
+      left: 74px;
+      -webkit-animation: 2.7s flickr -0.4s infinite;
+      animation: 2.7s flickr -0.4s infinite;
+    }
+
+    .star-228 {
+      top: 246px;
+      left: 99px;
+      -webkit-animation: 3.5s flickr -1.3s infinite;
+      animation: 3.5s flickr -1.3s infinite;
+    }
+
+    .star-229 {
+      top: 355px;
+      left: 60px;
+      -webkit-animation: 3.5s flickr -1.6s infinite;
+      animation: 3.5s flickr -1.6s infinite;
+    }
+
+    .star-230 {
+      top: 333px;
+      left: 247px;
+      -webkit-animation: 2.7s flickr -1.9s infinite;
+      animation: 2.7s flickr -1.9s infinite;
+    }
+
+    .star-231 {
+      top: 199px;
+      left: 236px;
+      -webkit-animation: 2.1s flickr -0.1s infinite;
+      animation: 2.1s flickr -0.1s infinite;
+    }
+
+    .star-232 {
+      top: 174px;
+      left: 203px;
+      -webkit-animation: 2.8s flickr -1s infinite;
+      animation: 2.8s flickr -1s infinite;
+    }
+
+    .star-233 {
+      top: 115px;
+      left: 145px;
+      -webkit-animation: 3.9s flickr -0.9s infinite;
+      animation: 3.9s flickr -0.9s infinite;
+    }
+
+    .star-234 {
+      top: 353px;
+      left: 151px;
+      -webkit-animation: 3.8s flickr -1.2s infinite;
+      animation: 3.8s flickr -1.2s infinite;
+    }
+
+    .star-235 {
+      top: 274px;
+      left: 299px;
+      -webkit-animation: 3.3s flickr -1.6s infinite;
+      animation: 3.3s flickr -1.6s infinite;
+    }
+
+    .star-236 {
+      top: 315px;
+      left: 114px;
+      -webkit-animation: 3.9s flickr -0.5s infinite;
+      animation: 3.9s flickr -0.5s infinite;
+    }
+
+    .star-237 {
+      top: 391px;
+      left: 124px;
+      -webkit-animation: 3.8s flickr -1.4s infinite;
+      animation: 3.8s flickr -1.4s infinite;
+    }
+
+    .star-238 {
+      top: 400px;
+      left: 395px;
+      -webkit-animation: 2.6s flickr -0.9s infinite;
+      animation: 2.6s flickr -0.9s infinite;
+    }
+
+    .star-239 {
+      top: 80px;
+      left: 376px;
+      -webkit-animation: 3.9s flickr -0.1s infinite;
+      animation: 3.9s flickr -0.1s infinite;
+    }
+
+    .star-240 {
+      top: 470px;
+      left: 178px;
+      -webkit-animation: 2.8s flickr -0.5s infinite;
+      animation: 2.8s flickr -0.5s infinite;
+    }
+
+    .star-241 {
+      top: 194px;
+      left: 258px;
+      -webkit-animation: 2.5s flickr -1.5s infinite;
+      animation: 2.5s flickr -1.5s infinite;
+    }
+
+    .star-242 {
+      top: 329px;
+      left: 173px;
+      -webkit-animation: 3.8s flickr -0.5s infinite;
+      animation: 3.8s flickr -0.5s infinite;
+    }
+
+    .star-243 {
+      top: 356px;
+      left: 268px;
+      -webkit-animation: 3.2s flickr -1.3s infinite;
+      animation: 3.2s flickr -1.3s infinite;
+    }
+
+    .star-244 {
+      top: 361px;
+      left: 95px;
+      -webkit-animation: 2.5s flickr -0.1s infinite;
+      animation: 2.5s flickr -0.1s infinite;
+    }
+
+    .star-245 {
+      top: 159px;
+      left: 60px;
+      -webkit-animation: 3.5s flickr -1.8s infinite;
+      animation: 3.5s flickr -1.8s infinite;
+    }
+
+    .star-246 {
+      top: 84px;
+      left: 30px;
+      -webkit-animation: 3.2s flickr -1.2s infinite;
+      animation: 3.2s flickr -1.2s infinite;
+    }
+
+    .star-247 {
+      top: 340px;
+      left: 125px;
+      -webkit-animation: 3.3s flickr -1s infinite;
+      animation: 3.3s flickr -1s infinite;
+    }
+
+    .star-248 {
+      top: 172px;
+      left: 111px;
+      -webkit-animation: 2.4s flickr -1s infinite;
+      animation: 2.4s flickr -1s infinite;
+    }
+
+    .star-249 {
+      top: 400px;
+      left: 45px;
+      -webkit-animation: 3.2s flickr -0.8s infinite;
+      animation: 3.2s flickr -0.8s infinite;
+    }
+
+    .star-250 {
+      top: 310px;
+      left: 20px;
+      -webkit-animation: 3s flickr -1.9s infinite;
+      animation: 3s flickr -1.9s infinite;
+    }
+
+    .star-251 {
+      top: 176px;
+      left: 27px;
+      -webkit-animation: 2.1s flickr -0.9s infinite;
+      animation: 2.1s flickr -0.9s infinite;
+    }
+
+    .star-252 {
+      top: 340px;
+      left: 27px;
+      -webkit-animation: 3.7s flickr -1.1s infinite;
+      animation: 3.7s flickr -1.1s infinite;
+    }
+
+    .star-253 {
+      top: 40px;
+      left: 157px;
+      -webkit-animation: 2.7s flickr -1.1s infinite;
+      animation: 2.7s flickr -1.1s infinite;
+    }
+
+    .star-254 {
+      top: 138px;
+      left: 184px;
+      -webkit-animation: 3s flickr -1.1s infinite;
+      animation: 3s flickr -1.1s infinite;
+    }
+
+    .star-255 {
+      top: 228px;
+      left: 275px;
+      -webkit-animation: 3.2s flickr -1.4s infinite;
+      animation: 3.2s flickr -1.4s infinite;
+    }
+
+    .star-256 {
+      top: 274px;
+      left: 154px;
+      -webkit-animation: 2.9s flickr -1.2s infinite;
+      animation: 2.9s flickr -1.2s infinite;
+    }
+
+    .star-257 {
+      top: 226px;
+      left: 388px;
+      -webkit-animation: 3.7s flickr -1.6s infinite;
+      animation: 3.7s flickr -1.6s infinite;
+    }
+
+    .star-258 {
+      top: 497px;
+      left: 313px;
+      -webkit-animation: 2.1s flickr -0.9s infinite;
+      animation: 2.1s flickr -0.9s infinite;
+    }
+
+    .star-259 {
+      top: 266px;
+      left: 353px;
+      -webkit-animation: 3s flickr -1.4s infinite;
+      animation: 3s flickr -1.4s infinite;
+    }
+
+    .star-260 {
+      top: 189px;
+      left: 184px;
+      -webkit-animation: 2.6s flickr -1.3s infinite;
+      animation: 2.6s flickr -1.3s infinite;
+    }
+
+    .star-261 {
+      top: 419px;
+      left: 168px;
+      -webkit-animation: 4s flickr -2s infinite;
+      animation: 4s flickr -2s infinite;
+    }
+
+    .star-262 {
+      top: 9px;
+      left: 225px;
+      -webkit-animation: 3.2s flickr -1.7s infinite;
+      animation: 3.2s flickr -1.7s infinite;
+    }
+
+    .star-263 {
+      top: 482px;
+      left: 253px;
+      -webkit-animation: 3.3s flickr -0.1s infinite;
+      animation: 3.3s flickr -0.1s infinite;
+    }
+
+    .star-264 {
+      top: 415px;
+      left: 100px;
+      -webkit-animation: 3.8s flickr -0.8s infinite;
+      animation: 3.8s flickr -0.8s infinite;
+    }
+
+    .star-265 {
+      top: 341px;
+      left: 129px;
+      -webkit-animation: 2.5s flickr -1.6s infinite;
+      animation: 2.5s flickr -1.6s infinite;
+    }
+
+    .star-266 {
+      top: 39px;
+      left: 149px;
+      -webkit-animation: 2.5s flickr -0.2s infinite;
+      animation: 2.5s flickr -0.2s infinite;
+    }
+
+    .star-267 {
+      top: 172px;
+      left: 116px;
+      -webkit-animation: 3.6s flickr -1.6s infinite;
+      animation: 3.6s flickr -1.6s infinite;
+    }
+
+    .star-268 {
+      top: 458px;
+      left: 160px;
+      -webkit-animation: 3.3s flickr -0.1s infinite;
+      animation: 3.3s flickr -0.1s infinite;
+    }
+
+    .star-269 {
+      top: 189px;
+      left: 16px;
+      -webkit-animation: 3.4s flickr -0.2s infinite;
+      animation: 3.4s flickr -0.2s infinite;
+    }
+
+    .star-270 {
+      top: 353px;
+      left: 39px;
+      -webkit-animation: 2.4s flickr -0.8s infinite;
+      animation: 2.4s flickr -0.8s infinite;
+    }
+
+    .star-271 {
+      top: 284px;
+      left: 386px;
+      -webkit-animation: 3.9s flickr -0.9s infinite;
+      animation: 3.9s flickr -0.9s infinite;
+    }
+
+    .star-272 {
+      top: 463px;
+      left: 144px;
+      -webkit-animation: 2.4s flickr -2s infinite;
+      animation: 2.4s flickr -2s infinite;
+    }
+
+    .star-273 {
+      top: 387px;
+      left: 143px;
+      -webkit-animation: 3.2s flickr -1.3s infinite;
+      animation: 3.2s flickr -1.3s infinite;
+    }
+
+    .star-274 {
+      top: 152px;
+      left: 315px;
+      -webkit-animation: 2.6s flickr -0.8s infinite;
+      animation: 2.6s flickr -0.8s infinite;
+    }
+
+    .star-275 {
+      top: 33px;
+      left: 309px;
+      -webkit-animation: 3s flickr -0.7s infinite;
+      animation: 3s flickr -0.7s infinite;
+    }
+
+    .star-276 {
+      top: 470px;
+      left: 301px;
+      -webkit-animation: 3.9s flickr -2s infinite;
+      animation: 3.9s flickr -2s infinite;
+    }
+
+    .star-277 {
+      top: 479px;
+      left: 13px;
+      -webkit-animation: 2.7s flickr -1.6s infinite;
+      animation: 2.7s flickr -1.6s infinite;
+    }
+
+    .star-278 {
+      top: 492px;
+      left: 131px;
+      -webkit-animation: 2.1s flickr -0.8s infinite;
+      animation: 2.1s flickr -0.8s infinite;
+    }
+
+    .star-279 {
+      top: 80px;
+      left: 52px;
+      -webkit-animation: 3.3s flickr -0.7s infinite;
+      animation: 3.3s flickr -0.7s infinite;
+    }
+
+    .star-280 {
+      top: 360px;
+      left: 371px;
+      -webkit-animation: 3.3s flickr -0.5s infinite;
+      animation: 3.3s flickr -0.5s infinite;
+    }
+
+    .star-281 {
+      top: 169px;
+      left: 133px;
+      -webkit-animation: 3.2s flickr -1.4s infinite;
+      animation: 3.2s flickr -1.4s infinite;
+    }
+
+    .star-282 {
+      top: 453px;
+      left: 187px;
+      -webkit-animation: 2.9s flickr -0.4s infinite;
+      animation: 2.9s flickr -0.4s infinite;
+    }
+
+    .star-283 {
+      top: 127px;
+      left: 123px;
+      -webkit-animation: 2.6s flickr -1.3s infinite;
+      animation: 2.6s flickr -1.3s infinite;
+    }
+
+    .star-284 {
+      top: 203px;
+      left: 159px;
+      -webkit-animation: 2.6s flickr -1.5s infinite;
+      animation: 2.6s flickr -1.5s infinite;
+    }
+
+    .star-285 {
+      top: 395px;
+      left: 228px;
+      -webkit-animation: 2.5s flickr -1.2s infinite;
+      animation: 2.5s flickr -1.2s infinite;
+    }
+
+    .star-286 {
+      top: 55px;
+      left: 349px;
+      -webkit-animation: 2.6s flickr -1s infinite;
+      animation: 2.6s flickr -1s infinite;
+    }
+
+    .star-287 {
+      top: 477px;
+      left: 128px;
+      -webkit-animation: 3.7s flickr -0.6s infinite;
+      animation: 3.7s flickr -0.6s infinite;
+    }
+
+    .star-288 {
+      top: 11px;
+      left: 263px;
+      -webkit-animation: 3.1s flickr -1.1s infinite;
+      animation: 3.1s flickr -1.1s infinite;
+    }
+
+    .star-289 {
+      top: 77px;
+      left: 345px;
+      -webkit-animation: 3.9s flickr -1.5s infinite;
+      animation: 3.9s flickr -1.5s infinite;
+    }
+
+    .star-290 {
+      top: 35px;
+      left: 2px;
+      -webkit-animation: 2.1s flickr -0.8s infinite;
+      animation: 2.1s flickr -0.8s infinite;
+    }
+
+    .star-291 {
+      top: 381px;
+      left: 116px;
+      -webkit-animation: 2.1s flickr -0.7s infinite;
+      animation: 2.1s flickr -0.7s infinite;
+    }
+
+    .star-292 {
+      top: 458px;
+      left: 385px;
+      -webkit-animation: 3.2s flickr -1.7s infinite;
+      animation: 3.2s flickr -1.7s infinite;
+    }
+
+    .star-293 {
+      top: 410px;
+      left: 341px;
+      -webkit-animation: 3.8s flickr -1.4s infinite;
+      animation: 3.8s flickr -1.4s infinite;
+    }
+
+    .star-294 {
+      top: 42px;
+      left: 275px;
+      -webkit-animation: 2.7s flickr -0.1s infinite;
+      animation: 2.7s flickr -0.1s infinite;
+    }
+
+    .star-295 {
+      top: 164px;
+      left: 274px;
+      -webkit-animation: 3.2s flickr -1.3s infinite;
+      animation: 3.2s flickr -1.3s infinite;
+    }
+
+    .star-296 {
+      top: 56px;
+      left: 218px;
+      -webkit-animation: 2.5s flickr -0.8s infinite;
+      animation: 2.5s flickr -0.8s infinite;
+    }
+
+    .star-297 {
+      top: 420px;
+      left: 19px;
+      -webkit-animation: 2.1s flickr -1.9s infinite;
+      animation: 2.1s flickr -1.9s infinite;
+    }
+
+    .star-298 {
+      top: 200px;
+      left: 309px;
+      -webkit-animation: 3.5s flickr -0.1s infinite;
+      animation: 3.5s flickr -0.1s infinite;
+    }
+
+    .star-299 {
+      top: 375px;
+      left: 97px;
+      -webkit-animation: 3.1s flickr -0.5s infinite;
+      animation: 3.1s flickr -0.5s infinite;
+    }
+
+    .star-300 {
+      top: 280px;
+      left: 131px;
+      -webkit-animation: 2.6s flickr -0.1s infinite;
+      animation: 2.6s flickr -0.1s infinite;
+    }
+
+    .star-301 {
+      top: 69px;
+      left: 179px;
+      -webkit-animation: 2.3s flickr -1.5s infinite;
+      animation: 2.3s flickr -1.5s infinite;
+    }
+
+    .star-302 {
+      top: 383px;
+      left: 145px;
+      -webkit-animation: 3.8s flickr -0.4s infinite;
+      animation: 3.8s flickr -0.4s infinite;
+    }
+
+    .star-303 {
+      top: 215px;
+      left: 63px;
+      -webkit-animation: 2.5s flickr -2s infinite;
+      animation: 2.5s flickr -2s infinite;
+    }
+
+    .star-304 {
+      top: 317px;
+      left: 334px;
+      -webkit-animation: 2.9s flickr -1.3s infinite;
+      animation: 2.9s flickr -1.3s infinite;
+    }
+
+    .star-305 {
+      top: 159px;
+      left: 305px;
+      -webkit-animation: 2.8s flickr -0.9s infinite;
+      animation: 2.8s flickr -0.9s infinite;
+    }
+
+    .star-306 {
+      top: 51px;
+      left: 224px;
+      -webkit-animation: 3.6s flickr -0.4s infinite;
+      animation: 3.6s flickr -0.4s infinite;
+    }
+
+    .star-307 {
+      top: 244px;
+      left: 260px;
+      -webkit-animation: 3.1s flickr -0.7s infinite;
+      animation: 3.1s flickr -0.7s infinite;
+    }
+
+    .star-308 {
+      top: 27px;
+      left: 132px;
+      -webkit-animation: 3.6s flickr -0.4s infinite;
+      animation: 3.6s flickr -0.4s infinite;
+    }
+
+    .star-309 {
+      top: 83px;
+      left: 120px;
+      -webkit-animation: 3.1s flickr -0.4s infinite;
+      animation: 3.1s flickr -0.4s infinite;
+    }
+
+    .star-310 {
+      top: 151px;
+      left: 6px;
+      -webkit-animation: 2.8s flickr -1.8s infinite;
+      animation: 2.8s flickr -1.8s infinite;
+    }
+
+    .star-311 {
+      top: 93px;
+      left: 23px;
+      -webkit-animation: 3.4s flickr -0.4s infinite;
+      animation: 3.4s flickr -0.4s infinite;
+    }
+
+    .star-312 {
+      top: 179px;
+      left: 196px;
+      -webkit-animation: 3.8s flickr -1s infinite;
+      animation: 3.8s flickr -1s infinite;
+    }
+
+    .star-313 {
+      top: 60px;
+      left: 128px;
+      -webkit-animation: 3.8s flickr -0.2s infinite;
+      animation: 3.8s flickr -0.2s infinite;
+    }
+
+    .star-314 {
+      top: 130px;
+      left: 85px;
+      -webkit-animation: 3.3s flickr -2s infinite;
+      animation: 3.3s flickr -2s infinite;
+    }
+
+    .star-315 {
+      top: 164px;
+      left: 134px;
+      -webkit-animation: 2.4s flickr -0.7s infinite;
+      animation: 2.4s flickr -0.7s infinite;
+    }
+
+    .star-316 {
+      top: 202px;
+      left: 132px;
+      -webkit-animation: 3.8s flickr -1.8s infinite;
+      animation: 3.8s flickr -1.8s infinite;
+    }
+
+    .star-317 {
+      top: 43px;
+      left: 393px;
+      -webkit-animation: 2.8s flickr -1.9s infinite;
+      animation: 2.8s flickr -1.9s infinite;
+    }
+
+    .star-318 {
+      top: 244px;
+      left: 370px;
+      -webkit-animation: 2.3s flickr -1.4s infinite;
+      animation: 2.3s flickr -1.4s infinite;
+    }
+
+    .star-319 {
+      top: 35px;
+      left: 86px;
+      -webkit-animation: 3.5s flickr -1.2s infinite;
+      animation: 3.5s flickr -1.2s infinite;
+    }
+
+    .star-320 {
+      top: 411px;
+      left: 348px;
+      -webkit-animation: 2.2s flickr -0.3s infinite;
+      animation: 2.2s flickr -0.3s infinite;
+    }
+
+    .star-321 {
+      top: 229px;
+      left: 26px;
+      -webkit-animation: 3.4s flickr -1.9s infinite;
+      animation: 3.4s flickr -1.9s infinite;
+    }
+
+    .star-322 {
+      top: 68px;
+      left: 166px;
+      -webkit-animation: 3.1s flickr -1.3s infinite;
+      animation: 3.1s flickr -1.3s infinite;
+    }
+
+    .star-323 {
+      top: 229px;
+      left: 34px;
+      -webkit-animation: 2.7s flickr -0.4s infinite;
+      animation: 2.7s flickr -0.4s infinite;
+    }
+
+    .star-324 {
+      top: 201px;
+      left: 325px;
+      -webkit-animation: 3.2s flickr -0.5s infinite;
+      animation: 3.2s flickr -0.5s infinite;
+    }
+
+    .star-325 {
+      top: 323px;
+      left: 330px;
+      -webkit-animation: 3.1s flickr -0.4s infinite;
+      animation: 3.1s flickr -0.4s infinite;
+    }
+
+    .star-326 {
+      top: 370px;
+      left: 145px;
+      -webkit-animation: 3.2s flickr -0.7s infinite;
+      animation: 3.2s flickr -0.7s infinite;
+    }
+
+    .star-327 {
+      top: 221px;
+      left: 281px;
+      -webkit-animation: 3.9s flickr -0.7s infinite;
+      animation: 3.9s flickr -0.7s infinite;
+    }
+
+    .star-328 {
+      top: 162px;
+      left: 196px;
+      -webkit-animation: 3.7s flickr -0.4s infinite;
+      animation: 3.7s flickr -0.4s infinite;
+    }
+
+    .star-329 {
+      top: 483px;
+      left: 243px;
+      -webkit-animation: 3s flickr -0.3s infinite;
+      animation: 3s flickr -0.3s infinite;
+    }
+
+    .star-330 {
+      top: 287px;
+      left: 93px;
+      -webkit-animation: 2.7s flickr -0.2s infinite;
+      animation: 2.7s flickr -0.2s infinite;
+    }
+
+    .star-331 {
+      top: 466px;
+      left: 183px;
+      -webkit-animation: 2.2s flickr -0.3s infinite;
+      animation: 2.2s flickr -0.3s infinite;
+    }
+
+    .star-332 {
+      top: 499px;
+      left: 59px;
+      -webkit-animation: 3.6s flickr -0.7s infinite;
+      animation: 3.6s flickr -0.7s infinite;
+    }
+
+    .star-333 {
+      top: 278px;
+      left: 34px;
+      -webkit-animation: 2.8s flickr -1.2s infinite;
+      animation: 2.8s flickr -1.2s infinite;
+    }
+
+    .star-334 {
+      top: 142px;
+      left: 353px;
+      -webkit-animation: 3.5s flickr -1.8s infinite;
+      animation: 3.5s flickr -1.8s infinite;
+    }
+
+    .star-335 {
+      top: 482px;
+      left: 130px;
+      -webkit-animation: 2.3s flickr -1.1s infinite;
+      animation: 2.3s flickr -1.1s infinite;
+    }
+
+    .star-336 {
+      top: 448px;
+      left: 365px;
+      -webkit-animation: 3.1s flickr -1.6s infinite;
+      animation: 3.1s flickr -1.6s infinite;
+    }
+
+    .star-337 {
+      top: 265px;
+      left: 317px;
+      -webkit-animation: 2.7s flickr -0.2s infinite;
+      animation: 2.7s flickr -0.2s infinite;
+    }
+
+    .star-338 {
+      top: 379px;
+      left: 35px;
+      -webkit-animation: 3s flickr -0.2s infinite;
+      animation: 3s flickr -0.2s infinite;
+    }
+
+    .star-339 {
+      top: 58px;
+      left: 356px;
+      -webkit-animation: 3.1s flickr -0.7s infinite;
+      animation: 3.1s flickr -0.7s infinite;
+    }
+
+    .star-340 {
+      top: 286px;
+      left: 386px;
+      -webkit-animation: 2.8s flickr -1.1s infinite;
+      animation: 2.8s flickr -1.1s infinite;
+    }
+
+    .star-341 {
+      top: 463px;
+      left: 391px;
+      -webkit-animation: 2.7s flickr -1.7s infinite;
+      animation: 2.7s flickr -1.7s infinite;
+    }
+
+    .star-342 {
+      top: 113px;
+      left: 325px;
+      -webkit-animation: 2.2s flickr -0.4s infinite;
+      animation: 2.2s flickr -0.4s infinite;
+    }
+
+    .star-343 {
+      top: 74px;
+      left: 94px;
+      -webkit-animation: 3.9s flickr -1.8s infinite;
+      animation: 3.9s flickr -1.8s infinite;
+    }
+
+    .star-344 {
+      top: 21px;
+      left: 76px;
+      -webkit-animation: 2.4s flickr -0.5s infinite;
+      animation: 2.4s flickr -0.5s infinite;
+    }
+
+    .star-345 {
+      top: 130px;
+      left: 140px;
+      -webkit-animation: 3.2s flickr -0.8s infinite;
+      animation: 3.2s flickr -0.8s infinite;
+    }
+
+    .star-346 {
+      top: 83px;
+      left: 337px;
+      -webkit-animation: 3.4s flickr -1.1s infinite;
+      animation: 3.4s flickr -1.1s infinite;
+    }
+
+    .star-347 {
+      top: 266px;
+      left: 376px;
+      -webkit-animation: 3.2s flickr -1.9s infinite;
+      animation: 3.2s flickr -1.9s infinite;
+    }
+
+    .star-348 {
+      top: 360px;
+      left: 263px;
+      -webkit-animation: 3.4s flickr -1.3s infinite;
+      animation: 3.4s flickr -1.3s infinite;
+    }
+
+    .star-349 {
+      top: 110px;
+      left: 307px;
+      -webkit-animation: 3.3s flickr -0.1s infinite;
+      animation: 3.3s flickr -0.1s infinite;
+    }
+
+    .star-350 {
+      top: 42px;
+      left: 106px;
+      -webkit-animation: 3.3s flickr -1.6s infinite;
+      animation: 3.3s flickr -1.6s infinite;
+    }
+
+    .star-351 {
+      top: 423px;
+      left: 117px;
+      -webkit-animation: 3.2s flickr -1.2s infinite;
+      animation: 3.2s flickr -1.2s infinite;
+    }
+
+    .star-352 {
+      top: 35px;
+      left: 102px;
+      -webkit-animation: 2.1s flickr -0.8s infinite;
+      animation: 2.1s flickr -0.8s infinite;
+    }
+
+    .star-353 {
+      top: 135px;
+      left: 112px;
+      -webkit-animation: 3.6s flickr -0.7s infinite;
+      animation: 3.6s flickr -0.7s infinite;
+    }
+
+    .star-354 {
+      top: 1px;
+      left: 189px;
+      -webkit-animation: 3.4s flickr -0.5s infinite;
+      animation: 3.4s flickr -0.5s infinite;
+    }
+
+    .star-355 {
+      top: 362px;
+      left: 312px;
+      -webkit-animation: 2.4s flickr -0.8s infinite;
+      animation: 2.4s flickr -0.8s infinite;
+    }
+
+    .star-356 {
+      top: 377px;
+      left: 234px;
+      -webkit-animation: 2.5s flickr -0.4s infinite;
+      animation: 2.5s flickr -0.4s infinite;
+    }
+
+    .star-357 {
+      top: 445px;
+      left: 216px;
+      -webkit-animation: 2.7s flickr -0.3s infinite;
+      animation: 2.7s flickr -0.3s infinite;
+    }
+
+    .star-358 {
+      top: 113px;
+      left: 161px;
+      -webkit-animation: 3s flickr -0.1s infinite;
+      animation: 3s flickr -0.1s infinite;
+    }
+
+    .star-359 {
+      top: 476px;
+      left: 62px;
+      -webkit-animation: 3.5s flickr -1s infinite;
+      animation: 3.5s flickr -1s infinite;
+    }
+
+    .star-360 {
+      top: 158px;
+      left: 202px;
+      -webkit-animation: 3.3s flickr -1.4s infinite;
+      animation: 3.3s flickr -1.4s infinite;
+    }
+
+    .star-361 {
+      top: 194px;
+      left: 103px;
+      -webkit-animation: 3.2s flickr -1.8s infinite;
+      animation: 3.2s flickr -1.8s infinite;
+    }
+
+    .star-362 {
+      top: 153px;
+      left: 218px;
+      -webkit-animation: 2.4s flickr -0.3s infinite;
+      animation: 2.4s flickr -0.3s infinite;
+    }
+
+    .star-363 {
+      top: 369px;
+      left: 155px;
+      -webkit-animation: 3.8s flickr -1.2s infinite;
+      animation: 3.8s flickr -1.2s infinite;
+    }
+
+    .star-364 {
+      top: 183px;
+      left: 227px;
+      -webkit-animation: 3.3s flickr -1.2s infinite;
+      animation: 3.3s flickr -1.2s infinite;
+    }
+
+    .star-365 {
+      top: 80px;
+      left: 95px;
+      -webkit-animation: 2.8s flickr -1.9s infinite;
+      animation: 2.8s flickr -1.9s infinite;
+    }
+
+    .star-366 {
+      top: 66px;
+      left: 213px;
+      -webkit-animation: 3s flickr -1.2s infinite;
+      animation: 3s flickr -1.2s infinite;
+    }
+
+    .star-367 {
+      top: 470px;
+      left: 329px;
+      -webkit-animation: 3.9s flickr -1.8s infinite;
+      animation: 3.9s flickr -1.8s infinite;
+    }
+
+    .star-368 {
+      top: 159px;
+      left: 386px;
+      -webkit-animation: 2.1s flickr -1.6s infinite;
+      animation: 2.1s flickr -1.6s infinite;
+    }
+
+    .star-369 {
+      top: 66px;
+      left: 209px;
+      -webkit-animation: 3.8s flickr -1.1s infinite;
+      animation: 3.8s flickr -1.1s infinite;
+    }
+
+    .star-370 {
+      top: 182px;
+      left: 397px;
+      -webkit-animation: 3.1s flickr -0.8s infinite;
+      animation: 3.1s flickr -0.8s infinite;
+    }
+
+    .star-371 {
+      top: 335px;
+      left: 307px;
+      -webkit-animation: 3.4s flickr -1.8s infinite;
+      animation: 3.4s flickr -1.8s infinite;
+    }
+
+    .star-372 {
+      top: 11px;
+      left: 243px;
+      -webkit-animation: 2.3s flickr -1.6s infinite;
+      animation: 2.3s flickr -1.6s infinite;
+    }
+
+    .star-373 {
+      top: 175px;
+      left: 394px;
+      -webkit-animation: 2.8s flickr -1.6s infinite;
+      animation: 2.8s flickr -1.6s infinite;
+    }
+
+    .star-374 {
+      top: 263px;
+      left: 24px;
+      -webkit-animation: 3.7s flickr -0.1s infinite;
+      animation: 3.7s flickr -0.1s infinite;
+    }
+
+    .star-375 {
+      top: 146px;
+      left: 205px;
+      -webkit-animation: 3.8s flickr -0.3s infinite;
+      animation: 3.8s flickr -0.3s infinite;
+    }
+
+    .star-376 {
+      top: 462px;
+      left: 102px;
+      -webkit-animation: 3s flickr -1.2s infinite;
+      animation: 3s flickr -1.2s infinite;
+    }
+
+    .star-377 {
+      top: 199px;
+      left: 92px;
+      -webkit-animation: 3s flickr -2s infinite;
+      animation: 3s flickr -2s infinite;
+    }
+
+    .star-378 {
+      top: 312px;
+      left: 37px;
+      -webkit-animation: 3.7s flickr -0.2s infinite;
+      animation: 3.7s flickr -0.2s infinite;
+    }
+
+    .star-379 {
+      top: 172px;
+      left: 363px;
+      -webkit-animation: 3.4s flickr -0.5s infinite;
+      animation: 3.4s flickr -0.5s infinite;
+    }
+
+    .star-380 {
+      top: 215px;
+      left: 223px;
+      -webkit-animation: 2.7s flickr -1.9s infinite;
+      animation: 2.7s flickr -1.9s infinite;
+    }
+
+    .star-381 {
+      top: 16px;
+      left: 381px;
+      -webkit-animation: 2.2s flickr -1.1s infinite;
+      animation: 2.2s flickr -1.1s infinite;
+    }
+
+    .star-382 {
+      top: 234px;
+      left: 284px;
+      -webkit-animation: 3.8s flickr -1.6s infinite;
+      animation: 3.8s flickr -1.6s infinite;
+    }
+
+    .star-383 {
+      top: 366px;
+      left: 124px;
+      -webkit-animation: 3.8s flickr -1.9s infinite;
+      animation: 3.8s flickr -1.9s infinite;
+    }
+
+    .star-384 {
+      top: 337px;
+      left: 193px;
+      -webkit-animation: 2.7s flickr -0.6s infinite;
+      animation: 2.7s flickr -0.6s infinite;
+    }
+
+    .star-385 {
+      top: 327px;
+      left: 83px;
+      -webkit-animation: 2.4s flickr -0.5s infinite;
+      animation: 2.4s flickr -0.5s infinite;
+    }
+
+    .star-386 {
+      top: 266px;
+      left: 60px;
+      -webkit-animation: 2.1s flickr -1s infinite;
+      animation: 2.1s flickr -1s infinite;
+    }
+
+    .star-387 {
+      top: 396px;
+      left: 28px;
+      -webkit-animation: 2.4s flickr -0.7s infinite;
+      animation: 2.4s flickr -0.7s infinite;
+    }
+
+    .star-388 {
+      top: 429px;
+      left: 392px;
+      -webkit-animation: 2.1s flickr -1.3s infinite;
+      animation: 2.1s flickr -1.3s infinite;
+    }
+
+    .star-389 {
+      top: 92px;
+      left: 185px;
+      -webkit-animation: 2.1s flickr -2s infinite;
+      animation: 2.1s flickr -2s infinite;
+    }
+
+    .star-390 {
+      top: 222px;
+      left: 107px;
+      -webkit-animation: 3.5s flickr -0.8s infinite;
+      animation: 3.5s flickr -0.8s infinite;
+    }
+
+    .star-391 {
+      top: 9px;
+      left: 280px;
+      -webkit-animation: 3.7s flickr -1.7s infinite;
+      animation: 3.7s flickr -1.7s infinite;
+    }
+
+    .star-392 {
+      top: 391px;
+      left: 34px;
+      -webkit-animation: 4s flickr -0.2s infinite;
+      animation: 4s flickr -0.2s infinite;
+    }
+
+    .star-393 {
+      top: 441px;
+      left: 185px;
+      -webkit-animation: 3.9s flickr -1.7s infinite;
+      animation: 3.9s flickr -1.7s infinite;
+    }
+
+    .star-394 {
+      top: 190px;
+      left: 108px;
+      -webkit-animation: 2.7s flickr -0.7s infinite;
+      animation: 2.7s flickr -0.7s infinite;
+    }
+
+    .star-395 {
+      top: 7px;
+      left: 232px;
+      -webkit-animation: 2.9s flickr -1.9s infinite;
+      animation: 2.9s flickr -1.9s infinite;
+    }
+
+    .star-396 {
+      top: 448px;
+      left: 367px;
+      -webkit-animation: 3.7s flickr -0.7s infinite;
+      animation: 3.7s flickr -0.7s infinite;
+    }
+
+    .star-397 {
+      top: 370px;
+      left: 180px;
+      -webkit-animation: 3.6s flickr -1.5s infinite;
+      animation: 3.6s flickr -1.5s infinite;
+    }
+
+    .star-398 {
+      top: 362px;
+      left: 204px;
+      -webkit-animation: 2.2s flickr -1.9s infinite;
+      animation: 2.2s flickr -1.9s infinite;
+    }
+
+    .star-399 {
+      top: 44px;
+      left: 88px;
+      -webkit-animation: 2.9s flickr -1s infinite;
+      animation: 2.9s flickr -1s infinite;
+    }
+
+    .star-400 {
+      top: 28px;
+      left: 333px;
+      -webkit-animation: 3.7s flickr -1.3s infinite;
+      animation: 3.7s flickr -1.3s infinite;
+    }
+
+    .star-401 {
+      top: 354px;
+      left: 262px;
+      -webkit-animation: 3.6s flickr -1.8s infinite;
+      animation: 3.6s flickr -1.8s infinite;
+    }
+
+    .star-402 {
+      top: 117px;
+      left: 222px;
+      -webkit-animation: 2.1s flickr -0.2s infinite;
+      animation: 2.1s flickr -0.2s infinite;
+    }
+
+    .star-403 {
+      top: 128px;
+      left: 80px;
+      -webkit-animation: 2.8s flickr -0.4s infinite;
+      animation: 2.8s flickr -0.4s infinite;
+    }
+
+    .star-404 {
+      top: 200px;
+      left: 166px;
+      -webkit-animation: 2.8s flickr -0.2s infinite;
+      animation: 2.8s flickr -0.2s infinite;
+    }
+
+    .star-405 {
+      top: 26px;
+      left: 26px;
+      -webkit-animation: 3.4s flickr -1.5s infinite;
+      animation: 3.4s flickr -1.5s infinite;
+    }
+
+    .star-406 {
+      top: 130px;
+      left: 33px;
+      -webkit-animation: 2.5s flickr -1s infinite;
+      animation: 2.5s flickr -1s infinite;
+    }
+
+    .star-407 {
+      top: 211px;
+      left: 397px;
+      -webkit-animation: 2.3s flickr -1.3s infinite;
+      animation: 2.3s flickr -1.3s infinite;
+    }
+
+    .star-408 {
+      top: 422px;
+      left: 312px;
+      -webkit-animation: 2.6s flickr -1.2s infinite;
+      animation: 2.6s flickr -1.2s infinite;
+    }
+
+    .star-409 {
+      top: 212px;
+      left: 246px;
+      -webkit-animation: 3.6s flickr -1s infinite;
+      animation: 3.6s flickr -1s infinite;
+    }
+
+    .star-410 {
+      top: 479px;
+      left: 94px;
+      -webkit-animation: 3.2s flickr -1.5s infinite;
+      animation: 3.2s flickr -1.5s infinite;
+    }
+
+    .star-411 {
+      top: 468px;
+      left: 174px;
+      -webkit-animation: 3s flickr -0.5s infinite;
+      animation: 3s flickr -0.5s infinite;
+    }
+
+    .star-412 {
+      top: 346px;
+      left: 360px;
+      -webkit-animation: 2.2s flickr -1.8s infinite;
+      animation: 2.2s flickr -1.8s infinite;
+    }
+
+    .star-413 {
+      top: 403px;
+      left: 95px;
+      -webkit-animation: 2.3s flickr -0.8s infinite;
+      animation: 2.3s flickr -0.8s infinite;
+    }
+
+    .star-414 {
+      top: 210px;
+      left: 250px;
+      -webkit-animation: 2.3s flickr -0.3s infinite;
+      animation: 2.3s flickr -0.3s infinite;
+    }
+
+    .star-415 {
+      top: 468px;
+      left: 46px;
+      -webkit-animation: 2.5s flickr -0.1s infinite;
+      animation: 2.5s flickr -0.1s infinite;
+    }
+
+    .star-416 {
+      top: 450px;
+      left: 24px;
+      -webkit-animation: 3.9s flickr -1.1s infinite;
+      animation: 3.9s flickr -1.1s infinite;
+    }
+
+    .star-417 {
+      top: 56px;
+      left: 29px;
+      -webkit-animation: 2.7s flickr -1.3s infinite;
+      animation: 2.7s flickr -1.3s infinite;
+    }
+
+    .star-418 {
+      top: 327px;
+      left: 171px;
+      -webkit-animation: 2.7s flickr -0.5s infinite;
+      animation: 2.7s flickr -0.5s infinite;
+    }
+
+    .star-419 {
+      top: 8px;
+      left: 300px;
+      -webkit-animation: 2.2s flickr -0.1s infinite;
+      animation: 2.2s flickr -0.1s infinite;
+    }
+
+    .star-420 {
+      top: 22px;
+      left: 143px;
+      -webkit-animation: 2.9s flickr -1.7s infinite;
+      animation: 2.9s flickr -1.7s infinite;
+    }
+
+    .star-421 {
+      top: 418px;
+      left: 39px;
+      -webkit-animation: 3.2s flickr -1.4s infinite;
+      animation: 3.2s flickr -1.4s infinite;
+    }
+
+    .star-422 {
+      top: 403px;
+      left: 343px;
+      -webkit-animation: 3.7s flickr -1.8s infinite;
+      animation: 3.7s flickr -1.8s infinite;
+    }
+
+    .star-423 {
+      top: 438px;
+      left: 326px;
+      -webkit-animation: 3.2s flickr -2s infinite;
+      animation: 3.2s flickr -2s infinite;
+    }
+
+    .star-424 {
+      top: 156px;
+      left: 343px;
+      -webkit-animation: 3.9s flickr -1.9s infinite;
+      animation: 3.9s flickr -1.9s infinite;
+    }
+
+    .star-425 {
+      top: 320px;
+      left: 190px;
+      -webkit-animation: 3.8s flickr -1.8s infinite;
+      animation: 3.8s flickr -1.8s infinite;
+    }
+
+    .star-426 {
+      top: 405px;
+      left: 165px;
+      -webkit-animation: 3s flickr -0.9s infinite;
+      animation: 3s flickr -0.9s infinite;
+    }
+
+    .star-427 {
+      top: 317px;
+      left: 89px;
+      -webkit-animation: 2.6s flickr -1.1s infinite;
+      animation: 2.6s flickr -1.1s infinite;
+    }
+
+    .star-428 {
+      top: 57px;
+      left: 19px;
+      -webkit-animation: 2.3s flickr -0.5s infinite;
+      animation: 2.3s flickr -0.5s infinite;
+    }
+
+    .star-429 {
+      top: 273px;
+      left: 370px;
+      -webkit-animation: 3.9s flickr -0.4s infinite;
+      animation: 3.9s flickr -0.4s infinite;
+    }
+
+    .star-430 {
+      top: 206px;
+      left: 365px;
+      -webkit-animation: 3.6s flickr -0.8s infinite;
+      animation: 3.6s flickr -0.8s infinite;
+    }
+
+    .star-431 {
+      top: 19px;
+      left: 197px;
+      -webkit-animation: 3.3s flickr -0.4s infinite;
+      animation: 3.3s flickr -0.4s infinite;
+    }
+
+    .star-432 {
+      top: 235px;
+      left: 329px;
+      -webkit-animation: 3.2s flickr -0.9s infinite;
+      animation: 3.2s flickr -0.9s infinite;
+    }
+
+    .star-433 {
+      top: 420px;
+      left: 130px;
+      -webkit-animation: 2.6s flickr -2s infinite;
+      animation: 2.6s flickr -2s infinite;
+    }
+
+    .star-434 {
+      top: 338px;
+      left: 155px;
+      -webkit-animation: 2.4s flickr -0.9s infinite;
+      animation: 2.4s flickr -0.9s infinite;
+    }
+
+    .star-435 {
+      top: 251px;
+      left: 355px;
+      -webkit-animation: 3.1s flickr -0.5s infinite;
+      animation: 3.1s flickr -0.5s infinite;
+    }
+
+    .star-436 {
+      top: 43px;
+      left: 14px;
+      -webkit-animation: 2.1s flickr -0.9s infinite;
+      animation: 2.1s flickr -0.9s infinite;
+    }
+
+    .star-437 {
+      top: 66px;
+      left: 142px;
+      -webkit-animation: 3s flickr -1.4s infinite;
+      animation: 3s flickr -1.4s infinite;
+    }
+
+    .star-438 {
+      top: 298px;
+      left: 342px;
+      -webkit-animation: 3.8s flickr -1.9s infinite;
+      animation: 3.8s flickr -1.9s infinite;
+    }
+
+    .star-439 {
+      top: 494px;
+      left: 184px;
+      -webkit-animation: 2.8s flickr -2s infinite;
+      animation: 2.8s flickr -2s infinite;
+    }
+
+    .star-440 {
+      top: 66px;
+      left: 326px;
+      -webkit-animation: 3s flickr -1.9s infinite;
+      animation: 3s flickr -1.9s infinite;
+    }
+
+    .star-441 {
+      top: 425px;
+      left: 62px;
+      -webkit-animation: 3.8s flickr -0.9s infinite;
+      animation: 3.8s flickr -0.9s infinite;
+    }
+
+    .star-442 {
+      top: 262px;
+      left: 390px;
+      -webkit-animation: 3.7s flickr -0.3s infinite;
+      animation: 3.7s flickr -0.3s infinite;
+    }
+
+    .star-443 {
+      top: 204px;
+      left: 26px;
+      -webkit-animation: 2.5s flickr -1.1s infinite;
+      animation: 2.5s flickr -1.1s infinite;
+    }
+
+    .star-444 {
+      top: 119px;
+      left: 334px;
+      -webkit-animation: 3.5s flickr -1.4s infinite;
+      animation: 3.5s flickr -1.4s infinite;
+    }
+
+    .star-445 {
+      top: 312px;
+      left: 225px;
+      -webkit-animation: 3.9s flickr -2s infinite;
+      animation: 3.9s flickr -2s infinite;
+    }
+
+    .star-446 {
+      top: 174px;
+      left: 276px;
+      -webkit-animation: 3.4s flickr -1.8s infinite;
+      animation: 3.4s flickr -1.8s infinite;
+    }
+
+    .star-447 {
+      top: 167px;
+      left: 341px;
+      -webkit-animation: 2.6s flickr -1s infinite;
+      animation: 2.6s flickr -1s infinite;
+    }
+
+    .star-448 {
+      top: 233px;
+      left: 360px;
+      -webkit-animation: 3.2s flickr -1.7s infinite;
+      animation: 3.2s flickr -1.7s infinite;
+    }
+
+    .star-449 {
+      top: 432px;
+      left: 199px;
+      -webkit-animation: 2.2s flickr -0.8s infinite;
+      animation: 2.2s flickr -0.8s infinite;
+    }
+
+    .star-450 {
+      top: 286px;
+      left: 84px;
+      -webkit-animation: 3.9s flickr -0.9s infinite;
+      animation: 3.9s flickr -0.9s infinite;
+    }
+
+    .star-451 {
+      top: 67px;
+      left: 204px;
+      -webkit-animation: 2.4s flickr -1.4s infinite;
+      animation: 2.4s flickr -1.4s infinite;
+    }
+
+    .star-452 {
+      top: 202px;
+      left: 18px;
+      -webkit-animation: 3.7s flickr -1.7s infinite;
+      animation: 3.7s flickr -1.7s infinite;
+    }
+
+    .star-453 {
+      top: 318px;
+      left: 136px;
+      -webkit-animation: 3s flickr -1.2s infinite;
+      animation: 3s flickr -1.2s infinite;
+    }
+
+    .star-454 {
+      top: 352px;
+      left: 113px;
+      -webkit-animation: 2.9s flickr -1.2s infinite;
+      animation: 2.9s flickr -1.2s infinite;
+    }
+
+    .star-455 {
+      top: 232px;
+      left: 72px;
+      -webkit-animation: 2.6s flickr -1.1s infinite;
+      animation: 2.6s flickr -1.1s infinite;
+    }
+
+    .star-456 {
+      top: 110px;
+      left: 394px;
+      -webkit-animation: 4s flickr -0.5s infinite;
+      animation: 4s flickr -0.5s infinite;
+    }
+
+    .star-457 {
+      top: 466px;
+      left: 400px;
+      -webkit-animation: 3.2s flickr -0.7s infinite;
+      animation: 3.2s flickr -0.7s infinite;
+    }
+
+    .star-458 {
+      top: 258px;
+      left: 200px;
+      -webkit-animation: 2.3s flickr -0.1s infinite;
+      animation: 2.3s flickr -0.1s infinite;
+    }
+
+    .star-459 {
+      top: 335px;
+      left: 125px;
+      -webkit-animation: 2.5s flickr -1.4s infinite;
+      animation: 2.5s flickr -1.4s infinite;
+    }
+
+    .star-460 {
+      top: 234px;
+      left: 5px;
+      -webkit-animation: 2.9s flickr -1.1s infinite;
+      animation: 2.9s flickr -1.1s infinite;
+    }
+
+    .star-461 {
+      top: 304px;
+      left: 297px;
+      -webkit-animation: 4s flickr -0.9s infinite;
+      animation: 4s flickr -0.9s infinite;
+    }
+
+    .star-462 {
+      top: 469px;
+      left: 221px;
+      -webkit-animation: 3.2s flickr -0.3s infinite;
+      animation: 3.2s flickr -0.3s infinite;
+    }
+
+    .star-463 {
+      top: 9px;
+      left: 301px;
+      -webkit-animation: 3.9s flickr -1.2s infinite;
+      animation: 3.9s flickr -1.2s infinite;
+    }
+
+    .star-464 {
+      top: 435px;
+      left: 210px;
+      -webkit-animation: 3.5s flickr -0.6s infinite;
+      animation: 3.5s flickr -0.6s infinite;
+    }
+
+    .star-465 {
+      top: 385px;
+      left: 346px;
+      -webkit-animation: 2.8s flickr -0.4s infinite;
+      animation: 2.8s flickr -0.4s infinite;
+    }
+
+    .star-466 {
+      top: 232px;
+      left: 397px;
+      -webkit-animation: 2.5s flickr -0.3s infinite;
+      animation: 2.5s flickr -0.3s infinite;
+    }
+
+    .star-467 {
+      top: 403px;
+      left: 190px;
+      -webkit-animation: 3.8s flickr -0.9s infinite;
+      animation: 3.8s flickr -0.9s infinite;
+    }
+
+    .star-468 {
+      top: 448px;
+      left: 328px;
+      -webkit-animation: 2.3s flickr -0.7s infinite;
+      animation: 2.3s flickr -0.7s infinite;
+    }
+
+    .star-469 {
+      top: 402px;
+      left: 149px;
+      -webkit-animation: 3.2s flickr -0.6s infinite;
+      animation: 3.2s flickr -0.6s infinite;
+    }
+
+    .star-470 {
+      top: 478px;
+      left: 378px;
+      -webkit-animation: 2.4s flickr -0.5s infinite;
+      animation: 2.4s flickr -0.5s infinite;
+    }
+
+    .star-471 {
+      top: 211px;
+      left: 250px;
+      -webkit-animation: 2.4s flickr -0.8s infinite;
+      animation: 2.4s flickr -0.8s infinite;
+    }
+
+    .star-472 {
+      top: 17px;
+      left: 72px;
+      -webkit-animation: 2.2s flickr -1.8s infinite;
+      animation: 2.2s flickr -1.8s infinite;
+    }
+
+    .star-473 {
+      top: 59px;
+      left: 162px;
+      -webkit-animation: 3.9s flickr -0.7s infinite;
+      animation: 3.9s flickr -0.7s infinite;
+    }
+
+    .star-474 {
+      top: 53px;
+      left: 187px;
+      -webkit-animation: 3.5s flickr -1.1s infinite;
+      animation: 3.5s flickr -1.1s infinite;
+    }
+
+    .star-475 {
+      top: 368px;
+      left: 307px;
+      -webkit-animation: 2.4s flickr -1s infinite;
+      animation: 2.4s flickr -1s infinite;
+    }
+
+    .star-476 {
+      top: 380px;
+      left: 78px;
+      -webkit-animation: 3.3s flickr -0.2s infinite;
+      animation: 3.3s flickr -0.2s infinite;
+    }
+
+    .star-477 {
+      top: 378px;
+      left: 241px;
+      -webkit-animation: 3.2s flickr -1.1s infinite;
+      animation: 3.2s flickr -1.1s infinite;
+    }
+
+    .star-478 {
+      top: 491px;
+      left: 326px;
+      -webkit-animation: 2.3s flickr -1.7s infinite;
+      animation: 2.3s flickr -1.7s infinite;
+    }
+
+    .star-479 {
+      top: 467px;
+      left: 29px;
+      -webkit-animation: 3.6s flickr -1.4s infinite;
+      animation: 3.6s flickr -1.4s infinite;
+    }
+
+    .star-480 {
+      top: 458px;
+      left: 73px;
+      -webkit-animation: 4s flickr -0.4s infinite;
+      animation: 4s flickr -0.4s infinite;
+    }
+
+    .star-481 {
+      top: 91px;
+      left: 385px;
+      -webkit-animation: 2.7s flickr -0.4s infinite;
+      animation: 2.7s flickr -0.4s infinite;
+    }
+
+    .star-482 {
+      top: 471px;
+      left: 259px;
+      -webkit-animation: 2.4s flickr -0.7s infinite;
+      animation: 2.4s flickr -0.7s infinite;
+    }
+
+    .star-483 {
+      top: 422px;
+      left: 288px;
+      -webkit-animation: 2.6s flickr -0.1s infinite;
+      animation: 2.6s flickr -0.1s infinite;
+    }
+
+    .star-484 {
+      top: 290px;
+      left: 33px;
+      -webkit-animation: 3.6s flickr -1.3s infinite;
+      animation: 3.6s flickr -1.3s infinite;
+    }
+
+    .star-485 {
+      top: 368px;
+      left: 191px;
+      -webkit-animation: 3.2s flickr -1.9s infinite;
+      animation: 3.2s flickr -1.9s infinite;
+    }
+
+    .star-486 {
+      top: 259px;
+      left: 372px;
+      -webkit-animation: 2.3s flickr -1s infinite;
+      animation: 2.3s flickr -1s infinite;
+    }
+
+    .star-487 {
+      top: 89px;
+      left: 328px;
+      -webkit-animation: 3s flickr -0.8s infinite;
+      animation: 3s flickr -0.8s infinite;
+    }
+
+    .star-488 {
+      top: 40px;
+      left: 281px;
+      -webkit-animation: 3.7s flickr -1s infinite;
+      animation: 3.7s flickr -1s infinite;
+    }
+
+    .star-489 {
+      top: 294px;
+      left: 53px;
+      -webkit-animation: 2.4s flickr -1.1s infinite;
+      animation: 2.4s flickr -1.1s infinite;
+    }
+
+    .star-490 {
+      top: 353px;
+      left: 142px;
+      -webkit-animation: 2.7s flickr -0.4s infinite;
+      animation: 2.7s flickr -0.4s infinite;
+    }
+
+    .star-491 {
+      top: 247px;
+      left: 237px;
+      -webkit-animation: 2.7s flickr -1.7s infinite;
+      animation: 2.7s flickr -1.7s infinite;
+    }
+
+    .star-492 {
+      top: 62px;
+      left: 13px;
+      -webkit-animation: 3.3s flickr -0.9s infinite;
+      animation: 3.3s flickr -0.9s infinite;
+    }
+
+    .star-493 {
+      top: 1px;
+      left: 217px;
+      -webkit-animation: 3.9s flickr -1.9s infinite;
+      animation: 3.9s flickr -1.9s infinite;
+    }
+
+    .star-494 {
+      top: 123px;
+      left: 93px;
+      -webkit-animation: 2.4s flickr -0.3s infinite;
+      animation: 2.4s flickr -0.3s infinite;
+    }
+
+    .star-495 {
+      top: 51px;
+      left: 240px;
+      -webkit-animation: 2.6s flickr -0.5s infinite;
+      animation: 2.6s flickr -0.5s infinite;
+    }
+
+    .star-496 {
+      top: 393px;
+      left: 292px;
+      -webkit-animation: 3.3s flickr -0.9s infinite;
+      animation: 3.3s flickr -0.9s infinite;
+    }
+
+    .star-497 {
+      top: 228px;
+      left: 99px;
+      -webkit-animation: 4s flickr -1.8s infinite;
+      animation: 4s flickr -1.8s infinite;
+    }
+
+    .star-498 {
+      top: 239px;
+      left: 283px;
+      -webkit-animation: 2.3s flickr -0.2s infinite;
+      animation: 2.3s flickr -0.2s infinite;
+    }
+
+    .star-499 {
+      top: 459px;
+      left: 247px;
+      -webkit-animation: 2.8s flickr -2s infinite;
+      animation: 2.8s flickr -2s infinite;
+    }
+
+    .star-500 {
+      top: 233px;
+      left: 252px;
+      -webkit-animation: 3.7s flickr -1.7s infinite;
+      animation: 3.7s flickr -1.7s infinite;
+    }
+
+    .shooting-star {
+      position: absolute;
+      top: 0;
+      left: -120px;
+      width: 120px;
+      height: 2px;
+      background: url(img/shooting-star.png) center center no-repeat;
+      background-size: 100% 100%;
+      transform: rotate(20deg);
+    }
+
+    .shooting-star-1 {
+      top: 89px;
+      -webkit-animation: 29s shooting-star 30.2s infinite;
+      animation: 29s shooting-star 30.2s infinite;
+    }
+
+    .shooting-star-2 {
+      top: 191px;
+      -webkit-animation: 22s shooting-star 8.1s infinite;
+      animation: 22s shooting-star 8.1s infinite;
+    }
+
+    .shooting-star-3 {
+      top: 268px;
+      -webkit-animation: 30s shooting-star 4.1s infinite;
+      animation: 30s shooting-star 4.1s infinite;
+    }
+
+    .shooting-star-4 {
+      top: 223px;
+      -webkit-animation: 27s shooting-star 0.7s infinite;
+      animation: 27s shooting-star 0.7s infinite;
+    }
+
+    .shooting-star-5 {
+      top: 57px;
+      -webkit-animation: 30s shooting-star 23.4s infinite;
+      animation: 30s shooting-star 23.4s infinite;
+    }
+
+    .shooting-star-6 {
+      top: 96px;
+      -webkit-animation: 22s shooting-star 12.5s infinite;
+      animation: 22s shooting-star 12.5s infinite;
+    }
+
+    .shooting-star-7 {
+      top: 192px;
+      -webkit-animation: 29s shooting-star 31.9s infinite;
+      animation: 29s shooting-star 31.9s infinite;
+    }
+
+    .shooting-star-8 {
+      top: 263px;
+      -webkit-animation: 23s shooting-star 22.6s infinite;
+      animation: 23s shooting-star 22.6s infinite;
+    }
+
+    .shooting-star-9 {
+      top: 63px;
+      -webkit-animation: 26s shooting-star 35s infinite;
+      animation: 26s shooting-star 35s infinite;
+    }
+
+    .shooting-star-10 {
+      top: 3px;
+      -webkit-animation: 29s shooting-star 28.4s infinite;
+      animation: 29s shooting-star 28.4s infinite;
+    }
+
+    .shooting-star-11 {
+      top: 200px;
+      -webkit-animation: 23s shooting-star 24.1s infinite;
+      animation: 23s shooting-star 24.1s infinite;
+    }
+
+    .shooting-star-12 {
+      top: 250px;
+      -webkit-animation: 28s shooting-star 17.5s infinite;
+      animation: 28s shooting-star 17.5s infinite;
+    }
+
+    .shooting-star-13 {
+      top: -28px;
+      -webkit-animation: 30s shooting-star 1.6s infinite;
+      animation: 30s shooting-star 1.6s infinite;
+    }
+
+    .shooting-star-14 {
+      top: 183px;
+      -webkit-animation: 29s shooting-star 27.8s infinite;
+      animation: 29s shooting-star 27.8s infinite;
+    }
+
+    .shooting-star-15 {
+      top: 36px;
+      -webkit-animation: 25s shooting-star 27.9s infinite;
+      animation: 25s shooting-star 27.9s infinite;
+    }
+
+    .shooting-star-16 {
+      top: 52px;
+      -webkit-animation: 24s shooting-star 23.9s infinite;
+      animation: 24s shooting-star 23.9s infinite;
+    }
+
+    .shooting-star-17 {
+      top: 102px;
+      -webkit-animation: 29s shooting-star 1.1s infinite;
+      animation: 29s shooting-star 1.1s infinite;
+    }
+
+    .shooting-star-18 {
+      top: 210px;
+      -webkit-animation: 25s shooting-star 22.6s infinite;
+      animation: 25s shooting-star 22.6s infinite;
+    }
+
+    .shooting-star-19 {
+      top: 5px;
+      -webkit-animation: 26s shooting-star 19.7s infinite;
+      animation: 26s shooting-star 19.7s infinite;
+    }
+
+    .shooting-star-20 {
+      top: 113px;
+      -webkit-animation: 23s shooting-star 32s infinite;
+      animation: 23s shooting-star 32s infinite;
+    }
+
+    @-webkit-keyframes flickr {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes flickr {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    @-webkit-keyframes shooting-star {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(20deg);
+      }
+
+      10%,
+      100% {
+        transform: translate3d(451px, 164px, 0) rotate(20deg);
+      }
+    }
+
+    @keyframes shooting-star {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(20deg);
+      }
+
+      10%,
+      100% {
+        transform: translate3d(451px, 164px, 0) rotate(20deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="stage">
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
+        <div class="star star-6"></div>
+        <div class="star star-7"></div>
+        <div class="star star-8"></div>
+        <div class="star star-9"></div>
+        <div class="star star-10"></div>
+        <div class="star star-11"></div>
+        <div class="star star-12"></div>
+        <div class="star star-13"></div>
+        <div class="star star-14"></div>
+        <div class="star star-15"></div>
+        <div class="star star-16"></div>
+        <div class="star star-17"></div>
+        <div class="star star-18"></div>
+        <div class="star star-19"></div>
+        <div class="star star-20"></div>
+        <div class="star star-21"></div>
+        <div class="star star-22"></div>
+        <div class="star star-23"></div>
+        <div class="star star-24"></div>
+        <div class="star star-25"></div>
+        <div class="star star-26"></div>
+        <div class="star star-27"></div>
+        <div class="star star-28"></div>
+        <div class="star star-29"></div>
+        <div class="star star-30"></div>
+        <div class="star star-31"></div>
+        <div class="star star-32"></div>
+        <div class="star star-33"></div>
+        <div class="star star-34"></div>
+        <div class="star star-35"></div>
+        <div class="star star-36"></div>
+        <div class="star star-37"></div>
+        <div class="star star-38"></div>
+        <div class="star star-39"></div>
+        <div class="star star-40"></div>
+        <div class="star star-41"></div>
+        <div class="star star-42"></div>
+        <div class="star star-43"></div>
+        <div class="star star-44"></div>
+        <div class="star star-45"></div>
+        <div class="star star-46"></div>
+        <div class="star star-47"></div>
+        <div class="star star-48"></div>
+        <div class="star star-49"></div>
+        <div class="star star-50"></div>
+        <div class="star star-51"></div>
+        <div class="star star-52"></div>
+        <div class="star star-53"></div>
+        <div class="star star-54"></div>
+        <div class="star star-55"></div>
+        <div class="star star-56"></div>
+        <div class="star star-57"></div>
+        <div class="star star-58"></div>
+        <div class="star star-59"></div>
+        <div class="star star-60"></div>
+        <div class="star star-61"></div>
+        <div class="star star-62"></div>
+        <div class="star star-63"></div>
+        <div class="star star-64"></div>
+        <div class="star star-65"></div>
+        <div class="star star-66"></div>
+        <div class="star star-67"></div>
+        <div class="star star-68"></div>
+        <div class="star star-69"></div>
+        <div class="star star-70"></div>
+        <div class="star star-71"></div>
+        <div class="star star-72"></div>
+        <div class="star star-73"></div>
+        <div class="star star-74"></div>
+        <div class="star star-75"></div>
+        <div class="star star-76"></div>
+        <div class="star star-77"></div>
+        <div class="star star-78"></div>
+        <div class="star star-79"></div>
+        <div class="star star-80"></div>
+        <div class="star star-81"></div>
+        <div class="star star-82"></div>
+        <div class="star star-83"></div>
+        <div class="star star-84"></div>
+        <div class="star star-85"></div>
+        <div class="star star-86"></div>
+        <div class="star star-87"></div>
+        <div class="star star-88"></div>
+        <div class="star star-89"></div>
+        <div class="star star-90"></div>
+        <div class="star star-91"></div>
+        <div class="star star-92"></div>
+        <div class="star star-93"></div>
+        <div class="star star-94"></div>
+        <div class="star star-95"></div>
+        <div class="star star-96"></div>
+        <div class="star star-97"></div>
+        <div class="star star-98"></div>
+        <div class="star star-99"></div>
+        <div class="star star-100"></div>
+        <div class="star star-101"></div>
+        <div class="star star-102"></div>
+        <div class="star star-103"></div>
+        <div class="star star-104"></div>
+        <div class="star star-105"></div>
+        <div class="star star-106"></div>
+        <div class="star star-107"></div>
+        <div class="star star-108"></div>
+        <div class="star star-109"></div>
+        <div class="star star-110"></div>
+        <div class="star star-111"></div>
+        <div class="star star-112"></div>
+        <div class="star star-113"></div>
+        <div class="star star-114"></div>
+        <div class="star star-115"></div>
+        <div class="star star-116"></div>
+        <div class="star star-117"></div>
+        <div class="star star-118"></div>
+        <div class="star star-119"></div>
+        <div class="star star-120"></div>
+        <div class="star star-121"></div>
+        <div class="star star-122"></div>
+        <div class="star star-123"></div>
+        <div class="star star-124"></div>
+        <div class="star star-125"></div>
+        <div class="star star-126"></div>
+        <div class="star star-127"></div>
+        <div class="star star-128"></div>
+        <div class="star star-129"></div>
+        <div class="star star-130"></div>
+        <div class="star star-131"></div>
+        <div class="star star-132"></div>
+        <div class="star star-133"></div>
+        <div class="star star-134"></div>
+        <div class="star star-135"></div>
+        <div class="star star-136"></div>
+        <div class="star star-137"></div>
+        <div class="star star-138"></div>
+        <div class="star star-139"></div>
+        <div class="star star-140"></div>
+        <div class="star star-141"></div>
+        <div class="star star-142"></div>
+        <div class="star star-143"></div>
+        <div class="star star-144"></div>
+        <div class="star star-145"></div>
+        <div class="star star-146"></div>
+        <div class="star star-147"></div>
+        <div class="star star-148"></div>
+        <div class="star star-149"></div>
+        <div class="star star-150"></div>
+        <div class="star star-151"></div>
+        <div class="star star-152"></div>
+        <div class="star star-153"></div>
+        <div class="star star-154"></div>
+        <div class="star star-155"></div>
+        <div class="star star-156"></div>
+        <div class="star star-157"></div>
+        <div class="star star-158"></div>
+        <div class="star star-159"></div>
+        <div class="star star-160"></div>
+        <div class="star star-161"></div>
+        <div class="star star-162"></div>
+        <div class="star star-163"></div>
+        <div class="star star-164"></div>
+        <div class="star star-165"></div>
+        <div class="star star-166"></div>
+        <div class="star star-167"></div>
+        <div class="star star-168"></div>
+        <div class="star star-169"></div>
+        <div class="star star-170"></div>
+        <div class="star star-171"></div>
+        <div class="star star-172"></div>
+        <div class="star star-173"></div>
+        <div class="star star-174"></div>
+        <div class="star star-175"></div>
+        <div class="star star-176"></div>
+        <div class="star star-177"></div>
+        <div class="star star-178"></div>
+        <div class="star star-179"></div>
+        <div class="star star-180"></div>
+        <div class="star star-181"></div>
+        <div class="star star-182"></div>
+        <div class="star star-183"></div>
+        <div class="star star-184"></div>
+        <div class="star star-185"></div>
+        <div class="star star-186"></div>
+        <div class="star star-187"></div>
+        <div class="star star-188"></div>
+        <div class="star star-189"></div>
+        <div class="star star-190"></div>
+        <div class="star star-191"></div>
+        <div class="star star-192"></div>
+        <div class="star star-193"></div>
+        <div class="star star-194"></div>
+        <div class="star star-195"></div>
+        <div class="star star-196"></div>
+        <div class="star star-197"></div>
+        <div class="star star-198"></div>
+        <div class="star star-199"></div>
+        <div class="star star-200"></div>
+        <div class="star star-201"></div>
+        <div class="star star-202"></div>
+        <div class="star star-203"></div>
+        <div class="star star-204"></div>
+        <div class="star star-205"></div>
+        <div class="star star-206"></div>
+        <div class="star star-207"></div>
+        <div class="star star-208"></div>
+        <div class="star star-209"></div>
+        <div class="star star-210"></div>
+        <div class="star star-211"></div>
+        <div class="star star-212"></div>
+        <div class="star star-213"></div>
+        <div class="star star-214"></div>
+        <div class="star star-215"></div>
+        <div class="star star-216"></div>
+        <div class="star star-217"></div>
+        <div class="star star-218"></div>
+        <div class="star star-219"></div>
+        <div class="star star-220"></div>
+        <div class="star star-221"></div>
+        <div class="star star-222"></div>
+        <div class="star star-223"></div>
+        <div class="star star-224"></div>
+        <div class="star star-225"></div>
+        <div class="star star-226"></div>
+        <div class="star star-227"></div>
+        <div class="star star-228"></div>
+        <div class="star star-229"></div>
+        <div class="star star-230"></div>
+        <div class="star star-231"></div>
+        <div class="star star-232"></div>
+        <div class="star star-233"></div>
+        <div class="star star-234"></div>
+        <div class="star star-235"></div>
+        <div class="star star-236"></div>
+        <div class="star star-237"></div>
+        <div class="star star-238"></div>
+        <div class="star star-239"></div>
+        <div class="star star-240"></div>
+        <div class="star star-241"></div>
+        <div class="star star-242"></div>
+        <div class="star star-243"></div>
+        <div class="star star-244"></div>
+        <div class="star star-245"></div>
+        <div class="star star-246"></div>
+        <div class="star star-247"></div>
+        <div class="star star-248"></div>
+        <div class="star star-249"></div>
+        <div class="star star-250"></div>
+        <div class="star star-251"></div>
+        <div class="star star-252"></div>
+        <div class="star star-253"></div>
+        <div class="star star-254"></div>
+        <div class="star star-255"></div>
+        <div class="star star-256"></div>
+        <div class="star star-257"></div>
+        <div class="star star-258"></div>
+        <div class="star star-259"></div>
+        <div class="star star-260"></div>
+        <div class="star star-261"></div>
+        <div class="star star-262"></div>
+        <div class="star star-263"></div>
+        <div class="star star-264"></div>
+        <div class="star star-265"></div>
+        <div class="star star-266"></div>
+        <div class="star star-267"></div>
+        <div class="star star-268"></div>
+        <div class="star star-269"></div>
+        <div class="star star-270"></div>
+        <div class="star star-271"></div>
+        <div class="star star-272"></div>
+        <div class="star star-273"></div>
+        <div class="star star-274"></div>
+        <div class="star star-275"></div>
+        <div class="star star-276"></div>
+        <div class="star star-277"></div>
+        <div class="star star-278"></div>
+        <div class="star star-279"></div>
+        <div class="star star-280"></div>
+        <div class="star star-281"></div>
+        <div class="star star-282"></div>
+        <div class="star star-283"></div>
+        <div class="star star-284"></div>
+        <div class="star star-285"></div>
+        <div class="star star-286"></div>
+        <div class="star star-287"></div>
+        <div class="star star-288"></div>
+        <div class="star star-289"></div>
+        <div class="star star-290"></div>
+        <div class="star star-291"></div>
+        <div class="star star-292"></div>
+        <div class="star star-293"></div>
+        <div class="star star-294"></div>
+        <div class="star star-295"></div>
+        <div class="star star-296"></div>
+        <div class="star star-297"></div>
+        <div class="star star-298"></div>
+        <div class="star star-299"></div>
+        <div class="star star-300"></div>
+        <div class="star star-301"></div>
+        <div class="star star-302"></div>
+        <div class="star star-303"></div>
+        <div class="star star-304"></div>
+        <div class="star star-305"></div>
+        <div class="star star-306"></div>
+        <div class="star star-307"></div>
+        <div class="star star-308"></div>
+        <div class="star star-309"></div>
+        <div class="star star-310"></div>
+        <div class="star star-311"></div>
+        <div class="star star-312"></div>
+        <div class="star star-313"></div>
+        <div class="star star-314"></div>
+        <div class="star star-315"></div>
+        <div class="star star-316"></div>
+        <div class="star star-317"></div>
+        <div class="star star-318"></div>
+        <div class="star star-319"></div>
+        <div class="star star-320"></div>
+        <div class="star star-321"></div>
+        <div class="star star-322"></div>
+        <div class="star star-323"></div>
+        <div class="star star-324"></div>
+        <div class="star star-325"></div>
+        <div class="star star-326"></div>
+        <div class="star star-327"></div>
+        <div class="star star-328"></div>
+        <div class="star star-329"></div>
+        <div class="star star-330"></div>
+        <div class="star star-331"></div>
+        <div class="star star-332"></div>
+        <div class="star star-333"></div>
+        <div class="star star-334"></div>
+        <div class="star star-335"></div>
+        <div class="star star-336"></div>
+        <div class="star star-337"></div>
+        <div class="star star-338"></div>
+        <div class="star star-339"></div>
+        <div class="star star-340"></div>
+        <div class="star star-341"></div>
+        <div class="star star-342"></div>
+        <div class="star star-343"></div>
+        <div class="star star-344"></div>
+        <div class="star star-345"></div>
+        <div class="star star-346"></div>
+        <div class="star star-347"></div>
+        <div class="star star-348"></div>
+        <div class="star star-349"></div>
+        <div class="star star-350"></div>
+        <div class="star star-351"></div>
+        <div class="star star-352"></div>
+        <div class="star star-353"></div>
+        <div class="star star-354"></div>
+        <div class="star star-355"></div>
+        <div class="star star-356"></div>
+        <div class="star star-357"></div>
+        <div class="star star-358"></div>
+        <div class="star star-359"></div>
+        <div class="star star-360"></div>
+        <div class="star star-361"></div>
+        <div class="star star-362"></div>
+        <div class="star star-363"></div>
+        <div class="star star-364"></div>
+        <div class="star star-365"></div>
+        <div class="star star-366"></div>
+        <div class="star star-367"></div>
+        <div class="star star-368"></div>
+        <div class="star star-369"></div>
+        <div class="star star-370"></div>
+        <div class="star star-371"></div>
+        <div class="star star-372"></div>
+        <div class="star star-373"></div>
+        <div class="star star-374"></div>
+        <div class="star star-375"></div>
+        <div class="star star-376"></div>
+        <div class="star star-377"></div>
+        <div class="star star-378"></div>
+        <div class="star star-379"></div>
+        <div class="star star-380"></div>
+        <div class="star star-381"></div>
+        <div class="star star-382"></div>
+        <div class="star star-383"></div>
+        <div class="star star-384"></div>
+        <div class="star star-385"></div>
+        <div class="star star-386"></div>
+        <div class="star star-387"></div>
+        <div class="star star-388"></div>
+        <div class="star star-389"></div>
+        <div class="star star-390"></div>
+        <div class="star star-391"></div>
+        <div class="star star-392"></div>
+        <div class="star star-393"></div>
+        <div class="star star-394"></div>
+        <div class="star star-395"></div>
+        <div class="star star-396"></div>
+        <div class="star star-397"></div>
+        <div class="star star-398"></div>
+        <div class="star star-399"></div>
+        <div class="star star-400"></div>
+        <div class="star star-401"></div>
+        <div class="star star-402"></div>
+        <div class="star star-403"></div>
+        <div class="star star-404"></div>
+        <div class="star star-405"></div>
+        <div class="star star-406"></div>
+        <div class="star star-407"></div>
+        <div class="star star-408"></div>
+        <div class="star star-409"></div>
+        <div class="star star-410"></div>
+        <div class="star star-411"></div>
+        <div class="star star-412"></div>
+        <div class="star star-413"></div>
+        <div class="star star-414"></div>
+        <div class="star star-415"></div>
+        <div class="star star-416"></div>
+        <div class="star star-417"></div>
+        <div class="star star-418"></div>
+        <div class="star star-419"></div>
+        <div class="star star-420"></div>
+        <div class="star star-421"></div>
+        <div class="star star-422"></div>
+        <div class="star star-423"></div>
+        <div class="star star-424"></div>
+        <div class="star star-425"></div>
+        <div class="star star-426"></div>
+        <div class="star star-427"></div>
+        <div class="star star-428"></div>
+        <div class="star star-429"></div>
+        <div class="star star-430"></div>
+        <div class="star star-431"></div>
+        <div class="star star-432"></div>
+        <div class="star star-433"></div>
+        <div class="star star-434"></div>
+        <div class="star star-435"></div>
+        <div class="star star-436"></div>
+        <div class="star star-437"></div>
+        <div class="star star-438"></div>
+        <div class="star star-439"></div>
+        <div class="star star-440"></div>
+        <div class="star star-441"></div>
+        <div class="star star-442"></div>
+        <div class="star star-443"></div>
+        <div class="star star-444"></div>
+        <div class="star star-445"></div>
+        <div class="star star-446"></div>
+        <div class="star star-447"></div>
+        <div class="star star-448"></div>
+        <div class="star star-449"></div>
+        <div class="star star-450"></div>
+        <div class="star star-451"></div>
+        <div class="star star-452"></div>
+        <div class="star star-453"></div>
+        <div class="star star-454"></div>
+        <div class="star star-455"></div>
+        <div class="star star-456"></div>
+        <div class="star star-457"></div>
+        <div class="star star-458"></div>
+        <div class="star star-459"></div>
+        <div class="star star-460"></div>
+        <div class="star star-461"></div>
+        <div class="star star-462"></div>
+        <div class="star star-463"></div>
+        <div class="star star-464"></div>
+        <div class="star star-465"></div>
+        <div class="star star-466"></div>
+        <div class="star star-467"></div>
+        <div class="star star-468"></div>
+        <div class="star star-469"></div>
+        <div class="star star-470"></div>
+        <div class="star star-471"></div>
+        <div class="star star-472"></div>
+        <div class="star star-473"></div>
+        <div class="star star-474"></div>
+        <div class="star star-475"></div>
+        <div class="star star-476"></div>
+        <div class="star star-477"></div>
+        <div class="star star-478"></div>
+        <div class="star star-479"></div>
+        <div class="star star-480"></div>
+        <div class="star star-481"></div>
+        <div class="star star-482"></div>
+        <div class="star star-483"></div>
+        <div class="star star-484"></div>
+        <div class="star star-485"></div>
+        <div class="star star-486"></div>
+        <div class="star star-487"></div>
+        <div class="star star-488"></div>
+        <div class="star star-489"></div>
+        <div class="star star-490"></div>
+        <div class="star star-491"></div>
+        <div class="star star-492"></div>
+        <div class="star star-493"></div>
+        <div class="star star-494"></div>
+        <div class="star star-495"></div>
+        <div class="star star-496"></div>
+        <div class="star star-497"></div>
+        <div class="star star-498"></div>
+        <div class="star star-499"></div>
+        <div class="star star-500"></div>
+        <div class="shooting-star shooting-star-1"></div>
+        <div class="shooting-star shooting-star-2"></div>
+        <div class="shooting-star shooting-star-3"></div>
+        <div class="shooting-star shooting-star-4"></div>
+        <div class="shooting-star shooting-star-5"></div>
+        <div class="shooting-star shooting-star-6"></div>
+        <div class="shooting-star shooting-star-7"></div>
+        <div class="shooting-star shooting-star-8"></div>
+        <div class="shooting-star shooting-star-9"></div>
+        <div class="shooting-star shooting-star-10"></div>
+        <div class="shooting-star shooting-star-11"></div>
+        <div class="shooting-star shooting-star-12"></div>
+        <div class="shooting-star shooting-star-13"></div>
+        <div class="shooting-star shooting-star-14"></div>
+        <div class="shooting-star shooting-star-15"></div>
+        <div class="shooting-star shooting-star-16"></div>
+        <div class="shooting-star shooting-star-17"></div>
+        <div class="shooting-star shooting-star-18"></div>
+        <div class="shooting-star shooting-star-19"></div>
+        <div class="shooting-star shooting-star-20"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
