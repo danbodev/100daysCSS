@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 26 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 400px;
+      height: 400px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #2C2E2E;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pacman {
+      width: 100px;
+      height: 100px;
+      fill: none;
+      stroke: #F4D146;
+      stroke-width: 50px;
+      stroke-linecap: butt;
+      stroke-dasharray: 157;
+      animation: mouth 0.7s ease-in-out infinite;
+    }
+
+    .eye {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 167px;
+      left: 204px;
+      fill: #2C2E2E;
+      animation: eye 0.7s ease-in-out infinite;
+    }
+
+    .dots {
+      position: absolute;
+      height: 14px;
+      width: 240px;
+      stroke: #F4D146;
+      stroke-width: 14px;
+      stroke-dasharray: 0px 50px;
+      stroke-linecap: round;
+      animation: points 0.7s linear infinite;
+      stroke-dashoffset: 14;
+      top: 50%;
+      left: 50%;
+    }
+
+    @keyframes mouth {
+
+      0%,
+      100% {
+        stroke-dashoffset: 0;
+        transform: rotate(0deg);
+      }
+
+      50% {
+        stroke-dashoffset: 40;
+        transform: rotate(45deg);
+      }
+    }
+
+    @keyframes eye {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(-6px, -3px, 0);
+      }
+    }
+
+    @keyframes points {
+      0% {
+        stroke-dashoffset: 14;
+      }
+
+      100% {
+        stroke-dashoffset: 64;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <svg class="pacman">
+        <circle cx="50" cy="50" r="25" />
+      </svg>
+      <svg class="eye">
+        <circle cx="6" cy="6" r="6" />
+      </svg>
+      <svg class="dots">
+        <polyline points="0,7 240,7" />
+      </svg>
+    </div>
+  </main>
+</body>
+
+</html>
