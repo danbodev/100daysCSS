@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 27 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 400px;
+      height: 500px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      column-gap: 1rem;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .dot {
+      position: absolute;
+      top: 46%;
+      left: 28.65%;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: 1s ease;
+      z-index: 5;
+    }
+
+    #check-2:checked~.dot {
+      transform: translateX(4.15rem);
+    }
+
+    #check-3:checked~.dot {
+      transform: translateX(8.25rem);
+    }
+
+    .bg {
+      box-sizing: content-box;
+      position: absolute;
+      width: 400px;
+      height: 500px;
+      top: 0;
+      left: 0;
+      background-color: #3498db;
+      border-left: 400px solid #9b59b6;
+      border-right: 400px solid #1abc9c;
+      transition: all 1s ease;
+    }
+
+    #check-2:checked~.bg {
+      transform: translateX(-400px);
+    }
+
+    #check-3:checked~.bg {
+      transform: translateX(-800px);
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="container">
+        <input type="radio" id="check-1" name="rd" />
+        <label class="circle" for="check-1"></label>
+        <input type="radio" id="check-2" name="rd" />
+        <label class="circle" for="check-2"></label>
+        <input type="radio" id="check-3" name="rd" />
+        <label class="circle" for="check-3"></label>
+        <div class="dot"></div>
+        <div class="bg"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
