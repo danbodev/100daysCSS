@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 29 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #70C2F4;
+    }
+
+    .box-canvas {
+      position: relative;
+      margin: auto;
+      display: block;
+      width: 500px;
+      height: 600px;
+      zoom: .8;
+    }
+
+    .flower {
+      position: absolute;
+      top: 125px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 245px;
+      height: 250px;
+    }
+
+    .flower::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(orange,
+          orange 40%,
+          yellow);
+    }
+
+    .petal {
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      background: radial-gradient(ellipse at right, gray, white 50%);
+      border-radius: 50%;
+      border: 1px solid lightgray;
+    }
+
+    .petal::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      background: radial-gradient(ellipse at right,
+          gray,
+          white 50%);
+      border-radius: 50%;
+      border: 1px solid lightgray;
+      transform: rotate(35deg);
+      transform-origin: center right;
+    }
+
+    .petal::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      background: radial-gradient(ellipse at right, gray, white 50%);
+      border-radius: 50%;
+      border: 1px solid lightgray;
+      transform: rotate(70deg);
+      transform-origin: center right;
+    }
+
+    .petal.two {
+      transform: rotate(105deg);
+      transform-origin: center right;
+    }
+
+    .petal.three {
+      transform: rotate(175deg);
+      transform-origin: center right;
+    }
+
+    .petal.four {
+      transform: rotate(285deg);
+      transform-origin: center right;
+    }
+
+    .petal.four::after {
+      content: none;
+    }
+
+    .stem {
+      position: absolute;
+      right: 140px;
+      top: 100px;
+      width: 140px;
+      height: 300px;
+      border-radius: 50% 50% 0 0;
+      border: 10px solid green;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(25deg);
+    }
+
+    .stem::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -20px;
+      background: green;
+      width: 10px;
+      height: 70px;
+      transform: rotate(-25deg);
+    }
+
+    .stem::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: 75px;
+      background: linear-gradient(to top, #014401, green 40%);
+      border-radius: 50% 0 0 50%;
+      clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+    }
+
+    .pot {
+      position: absolute;
+      left: 160px;
+      top: 470px;
+      width: 210px;
+      height: 200px;
+      background: linear-gradient(to right,
+          #B05428,
+          #DD7D5F 50%);
+      border-radius: 0 0 30% 30%;
+    }
+
+    .pot::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: -15px;
+      width: 180px;
+      height: 50px;
+      background: #4F211B;
+      border-radius: 50%;
+    }
+
+    .pot::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -10px;
+      border-bottom: 2px solid #B05428;
+      width: 230px;
+      height: 80px;
+      background: radial-gradient(#B05428,
+          #DD7D5F 99%,
+          #B05428);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-canvas">
+    <div class="pot"></div>
+    <div class="stem"></div>
+    <div class="flower">
+      <div class="petal"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+  </div>
+</body>
+
+</html>
