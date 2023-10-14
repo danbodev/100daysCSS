@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 30 | CSS CHALLENGE</title>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #5A5053;
+    }
+
+    .canvas {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    .canvas * {
+      position: absolute;
+    }
+
+    .table {
+      width: 280px;
+      height: 40px;
+      background: #504649;
+      bottom: 0;
+      left: 10px;
+      border-radius: 40px;
+    }
+
+    .cat {
+      top: 160px;
+      left: 100px;
+    }
+
+    .body {
+      width: 140px;
+      height: 100px;
+      background: #FFD07E;
+      border-radius: 10px;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 70px;
+      animation: breath 3s infinite;
+    }
+
+    .head {
+      width: 100px;
+      height: 80px;
+      background: #FFD07E;
+      border-radius: 40px;
+      left: 100px;
+      top: 20px;
+      animation: node 3s infinite;
+    }
+
+    .ear-1,
+    .ear-2 {
+      width: 15px;
+      height: 30px;
+      background: #FFD07E;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      animation: ear-move 3s infinite;
+    }
+
+    .ear-1 {
+      top: 8px;
+      left: 135px;
+    }
+
+    .ear-2 {
+      top: 8px;
+      left: 155px;
+    }
+
+    .tail {
+      width: 100px;
+      height: 18px;
+      background: #FFD07E;
+      border-radius: 18px;
+      top: 82px;
+      left: -80px;
+      animation: node 3s infinite;
+    }
+
+    .leg-1,
+    .leg-2 {
+      width: 35px;
+      height: 14px;
+      background: white;
+      border-radius: 18px;
+    }
+
+    .leg-1 {
+      top: 85px;
+      left: 40px;
+      animation: leg-move 3s infinite;
+    }
+
+    .leg-2 {
+      top: 85px;
+      left: 100px;
+      animation: ear-move 3s infinite;
+    }
+
+    .eye-1,
+    .eye-2 {
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      background: white;
+    }
+
+    .eye-1 {
+      top: 40px;
+      left: 165px;
+      z-index: 2;
+    }
+
+    .eye-2 {
+      top: 40px;
+      left: 140px;
+      z-index: 2;
+    }
+
+    .eyeball-1,
+    .eyeball-2 {
+      width: 15px;
+      height: 15px;
+      border-radius: 18px;
+      background: #504649;
+      animation: ear-move 3s infinite;
+    }
+
+    .eyeball-1 {
+      top: 42px;
+      left: 167px;
+      z-index: 2;
+    }
+
+    .eyeball-2 {
+      top: 42px;
+      left: 142px;
+      z-index: 2;
+    }
+
+    .nose {
+      width: 8px;
+      height: 4px;
+      background: #5A5053;
+      border-radius: 5px;
+      top: 64px;
+      left: 163px;
+      z-index: 2;
+    }
+
+    @keyframes breath {
+      0% {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 70px;
+      }
+
+      5% {
+        border-top-left-radius: 70px;
+        border-top-right-radius: 100px;
+      }
+
+      10% {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 70px;
+      }
+
+      15% {
+        border-top-left-radius: 70px;
+        border-top-right-radius: 100px;
+      }
+
+      20% {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 70px;
+      }
+
+      25% {
+        border-top-left-radius: 70px;
+        border-top-right-radius: 100px;
+      }
+
+      30% {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 70px;
+      }
+
+      100% {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 70px;
+      }
+    }
+
+    @keyframes node {
+      0% {
+        transform-origin: bottom right;
+        transform: scale(1, 1);
+      }
+
+      5% {
+        transform-origin: bottom right;
+        transform: scale(1.1, 1);
+      }
+
+      10% {
+        transform-origin: bottom right;
+        transform: scale(1, 1);
+      }
+
+      15% {
+        transform-origin: bottom right;
+        transform: scale(1.1, 1);
+      }
+
+      20% {
+        transform-origin: bottom right;
+        transform: scale(1, 1);
+      }
+
+      25% {
+        transform-origin: bottom right;
+        transform: scale(1.1, 1);
+      }
+
+      30% {
+        transform-origin: bottom right;
+        transform: scale(1, 1);
+      }
+
+      100% {
+        transform-origin: bottom right;
+        transform: scale(1, 1);
+      }
+    }
+
+    @keyframes ear-move {
+      0% {
+        transform-origin: bottom right;
+        transform: translate(0, 0);
+      }
+
+      5% {
+        transform-origin: bottom right;
+        transform: translate(5px, 0);
+      }
+
+      10% {
+        transform-origin: bottom right;
+        transform: translate(0, 0);
+      }
+
+      15% {
+        transform-origin: bottom right;
+        transform: translate(5px, 0);
+      }
+
+      20% {
+        transform-origin: bottom right;
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform-origin: bottom right;
+        transform: translate(5px, 0);
+      }
+
+      30% {
+        transform-origin: bottom right;
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform-origin: bottom right;
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes leg-move {
+      0% {
+        transform-origin: bottom left;
+        transform: translate(0, 0);
+      }
+
+      10% {
+        transform-origin: bottom left;
+        transform: translate(0, 5px);
+      }
+
+      20% {
+        transform-origin: bottom left;
+        transform: translate(0, 5px);
+      }
+
+      30% {
+        transform-origin: bottom left;
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform-origin: bottom left;
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="canvas">
+      <div class="table"></div>
+
+      <div class="cat">
+        <div class="body"></div>
+        <div class="tail"></div>
+        <div class="head"></div>
+        <div class="ear-1"></div>
+        <div class="ear-2"></div>
+        <div class="leg-1"></div>
+        <div class="leg-2"></div>
+        <div class="eye-1"></div>
+        <div class="eyeball-1"></div>
+        <div class="eye-2"></div>
+        <div class="eyeball-2"></div>
+        <div class="nose"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
