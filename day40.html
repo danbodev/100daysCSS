@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 40 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 2px;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background: #263A4D;
+    }
+
+    .wave {
+      position: absolute;
+      height: 150px;
+      width: 500px;
+      left: -50px;
+      background: #fff;
+      display: flex;
+    }
+
+    .wave .circle {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      top: -24px;
+      border-radius: 50px;
+    }
+
+    .wave .circle:nth-child(2n+2) {
+      top: -26px;
+    }
+
+    .wave-back {
+      top: 225px;
+      background: #406384;
+      animation: wave-back 4s ease-in-out alternate infinite;
+    }
+
+    .wave-back .circle {
+      background: #406384;
+    }
+
+    .wave-back .circle:nth-child(2n+2) {
+      background: #263A4D;
+    }
+
+    .wave-middle {
+      top: 280px;
+      background: #5D90BF;
+      animation: wave-middle 4s ease-in-out alternate infinite;
+    }
+
+    .wave-middle .circle {
+      background: #5D90BF;
+    }
+
+    .wave-middle .circle:nth-child(2n+2) {
+      background: #406384;
+    }
+
+    .wave-front {
+      top: 335px;
+      background: #7EB3E6;
+      animation: wave-front 4s ease-in-out alternate infinite;
+    }
+
+    .wave-front .circle {
+      background: #7EB3E6;
+    }
+
+    .wave-front .circle:nth-child(2n+2) {
+      background: #5D90BF;
+    }
+
+    @keyframes wave-back {
+      from {
+        transform: translate3d(-20px, 0, 0);
+      }
+
+      to {
+        transform: translate3d(20px, 0, 0);
+      }
+    }
+
+    @keyframes wave-middle {
+      from {
+        transform: translate3d(10px, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-10px, 0, 0);
+      }
+    }
+
+    @keyframes wave-front {
+      from {
+        transform: translate3d(-50px, 0, 0);
+      }
+
+      to {
+        transform: translate3d(50px, 0, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="wave wave-back">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="wave wave-middle">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="wave wave-front">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+</body>
+
+</html>
