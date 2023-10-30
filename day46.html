@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 46 | CSS CHALLENGE</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 400px;
+      height: 500px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.13);
+      background: #f39c12;
+      color: #fff;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel {
+      display: flex;
+      column-gap: .65rem;
+      margin-left: 45px;
+      font-size: 30px;
+      overflow: hidden;
+      height: 45px;
+    }
+
+    .carousel .pre {
+      text-shadow: 2px 2px 2px #e67e22;
+    }
+
+
+    .change_inner {
+      animation: rotate 8s ease-in-out infinite;
+    }
+
+    .element {
+      font-weight: 700;
+      text-shadow: 2px 2px 2px #e67e22;
+    }
+
+    @keyframes rotate {
+
+      0%,
+      20% {
+        transform: translateY(0);
+      }
+
+      25%,
+      45% {
+        transform: translateY(-40px);
+      }
+
+      50%,
+      70% {
+        transform: translateY(-80px);
+      }
+
+      75%,
+      95% {
+        transform: translateY(-122px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="carousel">
+        <p class="pre">I'm a </p>
+        <div class="change_inner">
+          <p class="element">Coder</p>
+          <p class="element">Writer</p>
+          <p class="element">Speaker</p>
+          <p class="element">Freelancer</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
