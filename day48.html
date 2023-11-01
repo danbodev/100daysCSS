@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 48 | CSS CHALLENGE</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 400px;
+      height: 500px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.15);
+      background: #E27474;
+      color: #fff;
+      font-family: 'Open Sans', Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+    }
+
+    .cards {
+      height: 350px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      text-align: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 1rem;
+      height: 100%;
+    }
+
+    .card:hover {
+      box-shadow: inset 2px 2px 4px 1px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95);
+    }
+
+    .number {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 80%;
+    }
+
+    .month {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="cards">
+        <div class="card">
+          <p class="text">Wednesday</p>
+          <p class="number">1</p>
+          <p class="month">November</p>
+        </div>
+        <div class="card">
+          <p class="text">Thursday</p>
+          <p class="number">2</p>
+          <p class="month">November</p>
+        </div>
+        <div class="card">
+          <p class="text">Friday</p>
+          <p class="number">3</p>
+          <p class="month">November</p>
+        </div>
+        <div class="card">
+          <p class="text">Saturday</p>
+          <p class="number">4</p>
+          <p class="month">November</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
