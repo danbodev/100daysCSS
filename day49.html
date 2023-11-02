@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 49 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 300px;
+      height: 500px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.25);
+      background: #9B59B6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ball {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      animation: ball 2s ease-in-out infinite;
+    }
+
+    .blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .blur-1 {
+      opacity: 0.9;
+      animation-name: blur-1;
+    }
+
+    .blur-2 {
+      opacity: 0.8;
+      animation-name: blur-2;
+    }
+
+    .blur-3 {
+      opacity: 0.7;
+      animation-name: blur-3;
+    }
+
+    .blur-4 {
+      opacity: 0.6;
+      animation-name: blur-4;
+    }
+
+    .blur-5 {
+      opacity: 0.5;
+      animation-name: blur-5;
+    }
+
+    @keyframes ball {
+
+      0%,
+      100% {
+        transform: translateX(-100px);
+      }
+
+      50% {
+        transform: translateX(100px);
+      }
+    }
+
+    @keyframes blur-1 {
+
+      0%,
+      50%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-7px);
+      }
+
+      75% {
+        transform: translateX(7px);
+      }
+    }
+
+    @keyframes blur-2 {
+
+      0%,
+      50%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-14px);
+      }
+
+      75% {
+        transform: translateX(14px);
+      }
+    }
+
+    @keyframes blur-3 {
+
+      0%,
+      50%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-21px);
+      }
+
+      75% {
+        transform: translateX(21px);
+      }
+    }
+
+    @keyframes blur-4 {
+
+      0%,
+      50%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-28px);
+      }
+
+      75% {
+        transform: translateX(28px);
+      }
+    }
+
+    @keyframes blur-5 {
+
+      0%,
+      50%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-35px);
+      }
+
+      75% {
+        transform: translateX(35px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="ball">
+        <div class="blur blur-1"></div>
+        <div class="blur blur-2"></div>
+        <div class="blur blur-3"></div>
+        <div class="blur blur-4"></div>
+        <div class="blur blur-5"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
