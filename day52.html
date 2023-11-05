@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 52 | CSS CHALLENGE</title>
+
+  <style>
+    :root {
+      --red: #E4312b;
+      --black: #000000;
+      --krim: #ecdbdb;
+      --green: #149954;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .watermelon {
+      width: 0;
+      height: 0;
+      border-left: 250px solid transparent;
+      border-right: 250px solid transparent;
+      border-bottom: 300px solid var(--red);
+      border-radius: 43% 57% 53% 47% / 0% 0% 100% 100%;
+      position: relative;
+    }
+
+    .watermelon::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 100px;
+      background-color: var(--krim);
+      top: 210px;
+      left: -177px;
+      z-index: -1;
+      border-radius: 40% 50% 50% 40% / 0% 0% 100% 100%;
+
+    }
+
+    .watermelon::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 120px;
+      background-color: var(--green);
+      top: 210px;
+      left: -177px;
+      z-index: -2;
+      border-radius: 40% 50% 50% 40% / 0% 0% 100% 100%;
+    }
+
+    .shades {
+      display: grid;
+      justify-content: space-evenly;
+      gap: 1.25rem;
+    }
+
+    .shades:first-child {
+      grid-template-columns: repeat(2, max-content);
+      margin-top: 4rem;
+    }
+
+    .shades:nth-child(2) {
+      grid-template-columns: repeat(6, max-content);
+      margin-block: 3.5rem;
+      gap: 1.65rem;
+    }
+
+    .shades:nth-child(3) {
+      grid-template-columns: repeat(5, max-content);
+      gap: 2.85rem;
+    }
+
+    .shades:nth-child(4) {
+      grid-template-columns: repeat(3, max-content);
+      margin-block: 2rem;
+      gap: 3.5rem;
+    }
+
+    span {
+      display: block;
+      background-color: var(--black);
+      width: 10px;
+      height: 15px;
+    }
+
+    span:nth-child(odd) {
+      border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+    }
+
+    span:nth-child(even) {
+      border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="watermelon">
+      <div class="shades">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="shades">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+      <div class="shades">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="shades">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
