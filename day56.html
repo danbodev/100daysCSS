@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 56 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      gap: .5rem;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+      border-radius: .25rem;
+      transition: transform .3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(3.15);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <img src="https://picsum.photos/150" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/151" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/152" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/153" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/154" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/155" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/156" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/157" alt="" aria-hidden="true">
+      <img src="https://picsum.photos/158" alt="" aria-hidden="true">
+    </div>
+  </main>
+
+  <script>
+    const images = document.querySelectorAll("img");
+    let x = 0,
+      y = 0;
+
+    for (let i = 0; i < images.length; i++) {
+      if (i % 3 === 0 && i) {
+        x = 0;
+        y += 50;
+      }
+
+      images[i].style.transformOrigin = `${x}% ${y}%`;
+
+      x += 50;
+    }
+  </script>
+</body>
+
+</html>
