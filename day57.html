@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 57 | CSS CHALLENGE</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .frame {
+      width: 400px;
+      height: 400px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #FDA231;
+      background: linear-gradient(to top right, #FDA231 0%, #FDCA31 100%);
+      color: #497081;
+      font-family: 'Open Sans', Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .todo {
+      background-color: #fff;
+      box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.10);
+      border-radius: .5rem;
+      padding: 1.25rem;
+    }
+
+    .head {
+      text-align: center;
+      margin-block: .5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #D4DCE0;
+      min-width: 150px;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      margin-bottom: .25rem;
+    }
+
+    .subtitle {
+      font-size: .85rem;
+    }
+
+    .list {
+      margin-block: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: .75rem;
+    }
+
+    .list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 1rem;
+      flex-direction: row-reverse;
+      position: relative;
+    }
+
+    .checkmark {
+      position: absolute;
+      stroke: #32d80d;
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 30 30;
+      stroke-dashoffset: 30;
+      transition: all .5s ease-out;
+      pointer-events: none;
+    }
+
+    .item,
+    .text {
+      transition: all .5s ease-out;
+    }
+
+    .item:checked {
+      opacity: 0;
+    }
+
+    .item:checked~.text {
+      color: #C8D4D9;
+    }
+
+    .item:checked~.checkmark {
+      stroke-dashoffset: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="todo">
+        <div class="head">
+          <h1 class="title"></h1>
+          <p class="subtitle"></p>
+        </div>
+        <ul class="list">
+          <li>
+            <input type="checkbox" id="item-1" name="item-1" class="item" />
+            <label for="item-1" class="text">Sleep</label>
+            <svg width="15px" height="10px" class="checkmark">
+              <polyline points="1,5 6,9 14,1" />
+            </svg>
+          </li>
+          <li>
+            <input type="checkbox" id="item-2" name="item-2" class="item" />
+            <label for="item-2" class="text">Eat</label>
+            <svg width="15px" height="10px" class="checkmark">
+              <polyline points="1,5 6,9 14,1" />
+            </svg>
+          </li>
+          <li>
+            <input type="checkbox" id="item-3" name="item-3" class="item" />
+            <label for="item-3" class="text">Code</label>
+            <svg width="15px" height="10px" class="checkmark">
+              <polyline points="1,5 6,9 14,1" />
+            </svg>
+          </li>
+          <li>
+            <input type="checkbox" id="item-4" name="item-4" class="item" />
+            <label for="item-4" class="text">Repeat</label>
+            <svg width="15px" height="10px" class="checkmark">
+              <polyline points="1,5 6,9 14,1" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const d = new Date();
+
+    const day = d.getDay();
+    const date = new Intl.DateTimeFormat("en", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }).format(d)
+
+    document.querySelector(".title").textContent = days[day];
+    document.querySelector(".subtitle").textContent = date;
+  </script>
+</body>
+
+</html>
