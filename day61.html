@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 61 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      background: #1A2238;
+      color: #394568;
+      overflow: hidden;
+    }
+
+    .moon {
+      position: absolute;
+      width: 67px;
+      height: 67px;
+      top: 45px;
+      left: 55px;
+      border-radius: 50%;
+      background: #F6EDBD;
+      overflow: hidden;
+      box-shadow: 0 0 10px 0 #F6EDBD;
+      animation: rise 1s ease-out;
+    }
+
+    .crater {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      top: 9px;
+      left: 28px;
+      border-radius: 10px;
+      background: #ECE1A8;
+    }
+
+    .crater-2 {
+      top: 12px;
+      left: 0;
+    }
+
+    .crater-3 {
+      top: 56px;
+      left: 10px;
+    }
+
+
+    .crater-9,
+    .crater-8,
+    .crater-7,
+    .crater-6,
+    .crater-5,
+    .crater-4 {
+      width: 6px;
+      height: 6px;
+    }
+
+    .crater-4 {
+      top: 37px;
+      left: 49px;
+    }
+
+    .crater-5 {
+      top: 24px;
+      left: 61px;
+    }
+
+    .crater-6 {
+      top: 55px;
+      left: 33px;
+    }
+
+    .crater-7 {
+      top: 17px;
+      left: 46px;
+    }
+
+    .crater-8 {
+      top: 28px;
+      left: 27px;
+    }
+
+    .crater-9 {
+      top: 39px;
+      left: 17px;
+    }
+
+    .crater-10,
+    .crater-11 {
+      width: 4px;
+      height: 4px;
+    }
+
+    .crater-10 {
+      top: 25px;
+      left: 15px;
+    }
+
+    .crater-11 {
+      top: 37px;
+      left: 37px;
+    }
+
+    .hill {
+      position: absolute;
+      z-index: 2;
+      width: 337px;
+      height: 281px;
+      background: #26314F;
+      border-radius: 50%;
+    }
+
+    .hill-bg-1 {
+      top: 201px;
+      left: -57px;
+    }
+
+    .hill-bg-2 {
+      top: 197px;
+      left: 177px;
+    }
+
+    .hill-fg-1,
+    .hill-fg-3,
+    .hill-fg-2 {
+      background: #303C5D;
+    }
+
+    .hill-fg-1 {
+      top: 248px;
+      left: -137px;
+    }
+
+    .hill-fg-2 {
+      top: 221px;
+      left: 63px;
+    }
+
+    .hill-fg-3 {
+      top: 248px;
+      left: 292px;
+    }
+
+    .drop {
+      position: absolute;
+      z-index: 20;
+      bottom: 90px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7FC1F9;
+      animation-fill-mode: both;
+      transform-origin: 50% 100%;
+    }
+
+    .drop:before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: -2px;
+      left: 1px;
+      width: 6px;
+      height: 6px;
+      background: #7FC1F9;
+      border-radius: 3px;
+    }
+
+    .drop:after {
+      position: absolute;
+      content: '';
+      display: block;
+      top: -5px;
+      left: 2px;
+      width: 4px;
+      height: 10px;
+      background: #7FC1F9;
+      border-radius: 50%;
+    }
+
+    .drop-1 {
+      left: 10px;
+      animation: drop 0.8s linear 1.24s infinite;
+    }
+
+    .drop-2 {
+      left: 34px;
+      animation: drop 0.9s linear 1.16s infinite;
+    }
+
+    .drop-3 {
+      left: 74px;
+      animation: drop 0.9s linear .64s infinite;
+    }
+
+    .drop-4 {
+      left: 92px;
+      animation: drop 0.8s linear 1.32s infinite;
+    }
+
+    .drop-5 {
+      left: 136px;
+      animation: drop 0.8s linear .48s infinite;
+    }
+
+    .drop-6 {
+      left: 148px;
+      animation: drop 0.9s linear .6s infinite;
+    }
+
+    .drop-7 {
+      left: 196px;
+      animation: drop 0.9s linear .28s infinite;
+    }
+
+    .drop-8 {
+      left: 214px;
+      animation: drop 0.8s linear 1.12s infinite;
+    }
+
+    .drop-9 {
+      left: 242px;
+      animation: drop 0.8s linear .8s infinite;
+    }
+
+    .drop-10 {
+      left: 260px;
+      animation: drop 0.8s linear 1.28s infinite;
+    }
+
+    .drop-11 {
+      left: 284px;
+      animation: drop 0.9s linear 1.15s infinite;
+    }
+
+    .drop-12 {
+      left: 312px;
+      animation: drop 0.7s linear 1.18s infinite;
+    }
+
+    .drop-13 {
+      left: 315px;
+      animation: drop 0.9s linear 1.58s infinite;
+    }
+
+    .drop-14 {
+      left: 340px;
+      animation: drop 0.8s linear 1.18s infinite;
+    }
+
+    .drop-15 {
+      left: 362px;
+      animation: drop 0.7s linear 1.38s infinite;
+    }
+
+    .drop-16 {
+      left: 384px;
+      animation: drop 0.9s linear 1.48s infinite;
+    }
+
+    .drop-17 {
+      left: 400px;
+      animation: drop 0.9s linear 1.18s infinite;
+    }
+
+    .drop-18 {
+      left: 150px;
+      animation: drop 0.7s linear 1.28s infinite;
+    }
+
+    .ground {
+      background-color: #26314F;
+      width: 100%;
+      z-index: 5;
+      position: absolute;
+      bottom: 0;
+      height: 90px;
+    }
+
+    @keyframes drop {
+      0% {
+        transform: translate3d(40px, -320px, 0) scaleX(1) scaleY(1) rotate(17deg);
+      }
+
+      85% {
+        transform: translate3d(0, 0, 0) scaleX(1) scaleY(1) rotate(17deg);
+      }
+
+      100% {
+        transform: translate3d(0, 0, 0) scaleX(3) scaleY(0) rotate(0deg);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        transform: translate(-20px, 200px);
+      }
+
+      to {
+        transform: translate(0, 0px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="moon">
+        <div class="crater crater-1"></div>
+        <div class="crater crater-2"></div>
+        <div class="crater crater-3"></div>
+        <div class="crater crater-4"></div>
+        <div class="crater crater-5"></div>
+        <div class="crater crater-6"></div>
+        <div class="crater crater-7"></div>
+        <div class="crater crater-8"></div>
+        <div class="crater crater-9"></div>
+        <div class="crater crater-10"></div>
+        <div class="crater crater-11"></div>
+      </div>
+      <div class="hill hill-bg-1"></div>
+      <div class="hill hill-bg-2"></div>
+      <div class="hill hill-fg-1"></div>
+      <div class="hill hill-fg-2"></div>
+      <div class="hill hill-fg-3"></div>
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
+      <div class="drop drop-6"></div>
+      <div class="drop drop-7"></div>
+      <div class="drop drop-8"></div>
+      <div class="drop drop-9"></div>
+      <div class="drop drop-10"></div>
+      <div class="drop drop-11"></div>
+      <div class="drop drop-12"></div>
+      <div class="drop drop-13"></div>
+      <div class="drop drop-14"></div>
+      <div class="drop drop-15"></div>
+      <div class="drop drop-16"></div>
+      <div class="drop drop-17"></div>
+      <div class="drop drop-18"></div>
+
+      <div class="ground"></div>
+
+    </div>
+  </main>
+</body>
+
+</html>
