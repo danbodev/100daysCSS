@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 62 | CSS CHALLENGE</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      height: 500px;
+      width: 350px;
+      background: #F9F2E7;
+      display: grid;
+      place-items: center;
+    }
+
+    .burger {
+      width: 150px;
+      aspect-ratio: 1.25;
+      border-radius: 20px;
+
+      background:
+        linear-gradient(#eaa73b 0 0) top /100% 20%,
+        linear-gradient(#eaa73b 0 0) bottom/100% 20%;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+      cursor: pointer;
+      transition: .35s;
+      outline-offset: 5px;
+    }
+
+    .burger::before,
+    .burger::after {
+      content: "";
+      position: absolute;
+      inset: 40% -5%;
+      background: #82532d;
+      border-radius: 50px;
+      transition: inherit;
+    }
+
+    .burger:hover {
+      border-radius: 100px 100px 20px 20px;
+      background-size: 100% 45%, 100% 25%;
+    }
+
+    .burger:hover::before,
+    .burger:hover::after {
+      transform: translateY(50%);
+    }
+
+    .burger:checked {
+      background-size: 0 0;
+    }
+
+    .burger:checked::before {
+      transform: translateY(50%) rotate(45deg)
+    }
+
+    .burger:checked::after {
+      transform: translateY(50%) rotate(-45deg)
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <input type="checkbox" class="burger">
+    </div>
+  </main>
+</body>
+
+</html>
