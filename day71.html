@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 71 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #1d4253 0%, #6bb5c4 100%);
+    }
+
+    .star {
+      width: 400px;
+      height: 400px;
+      background-color: #fcee31;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      position: relative;
+    }
+
+    .star::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      top: 40%;
+      left: 55%;
+      box-shadow: -50px 0 0 #000;
+    }
+
+    .star::after {
+      content: "";
+      width: 50px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-bottom: 5px solid #000;
+      border-radius: 0 0 50% 50%;
+      transform: translateX(-50%)
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="star">
+    </div>
+  </main>
+</body>
+
+</html>
