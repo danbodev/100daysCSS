@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 81 | CSS CHALLENGE</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #BDCEDB;
+    }
+
+    .frame {
+      width: 400px;
+      height: 400px;
+      color: #fff;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      perspective: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cb {
+      display: none;
+    }
+
+    .button {
+      padding: 1.5rem 3rem;
+      text-align: center;
+      line-height: 46px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+      filter: drop-shadow(4px 8px 12px 0 rgba(0, 0, 0, 0.1));
+    }
+
+    .button .front,
+    .button .back {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: #34495E;
+      background: #fff;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotateX(0);
+    }
+
+    .button .back {
+      z-index: 1;
+      color: #fff;
+      background: #64C760;
+      border: 2px solid #fff;
+      transform: rotateX(180deg);
+    }
+
+    .cb:checked~.button {
+      transform: rotateX(180deg);
+      filter: drop-shadow(4px -8px 12px 0 rgba(0, 0, 0, 0.1); );
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <input type="checkbox" name="cb" id="cb" class="cb" />
+      <label class="button" for="cb">
+        <span class="front">send</span>
+        <span class="back">done</span>
+      </label>
+    </div>
+  </main>
+</body>
+
+</html>
