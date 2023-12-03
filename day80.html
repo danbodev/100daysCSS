@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 80 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background-color: #eefa06;
+    }
+
+    .loop {
+      width: calc(300px - 20px);
+      height: 150px;
+      border-radius: 50px;
+      background:
+        radial-gradient(farthest-side, #0000 calc(100% - 31px), #222 calc(100% - 30px) 99%, #0000) left,
+        radial-gradient(farthest-side, #0000 calc(100% - 31px), #222 calc(100% - 30px) 99%, #0000) right;
+      background-size: calc(50% + 15px) 100%;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .loop:before,
+    .loop:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: red;
+      --d: -7.5px;
+      animation: l 4s infinite linear;
+    }
+
+    .loop:after {
+      background: green;
+      --d: 7.5px;
+      animation-direction: reverse;
+    }
+
+
+    @keyframes l {
+      0% {
+        transform-origin: -55px 50%;
+        transform: translate(var(--d)) rotate(0turn)
+      }
+
+      49.99% {
+        transform-origin: -55px 50%;
+        transform: translate(var(--d)) rotate(1turn);
+      }
+
+      50% {
+        transform-origin: 70px 50%;
+        transform: translate(var(--d)) rotate(0turn);
+      }
+
+      100% {
+        transform-origin: 70px 50%;
+        transform: translate(var(--d)) rotate(-1turn);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="loop"></div>
+  </main>
+</body>
+
+</html>
