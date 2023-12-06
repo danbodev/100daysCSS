@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 84 | CSS CHALLENGE</title>
+
+  <style>
+    :root {
+      --duration: 1.6s;
+      --easing: cubic-bezier(.72, .03, .28, .97);
+    }
+
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #3498db;
+    }
+
+    .frame {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .down {
+      position: relative;
+      animation: down var(--duration) ease-in infinite both;
+    }
+
+    .up {
+      animation: up var(--duration) ease-in-out infinite both;
+    }
+
+    .squeeze {
+      transform-origin: 50% 100%;
+      animation: squeeze var(--duration) var(--easing) infinite both;
+    }
+
+    .rotate-in {
+      animation: rotate-in var(--duration) ease-out infinite both;
+    }
+
+    .rotate-out {
+      animation: rotate-out var(--duration) ease-in infinite both;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      background: #fff;
+    }
+
+    .shadow {
+      position: absolute;
+      z-index: 1;
+      bottom: 35%;
+      width: 100px;
+      height: 2px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
+      animation: shadow var(--duration) ease-in-out infinite both;
+    }
+
+    @keyframes down {
+      0% {
+        transform: translateY(-100px);
+      }
+
+      20%,
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes up {
+
+      0%,
+      75% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-100px);
+      }
+    }
+
+    @keyframes squeeze {
+
+      0%,
+      4% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(1.8, 0.4);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes rotate-in {
+      0% {
+        transform: rotate(-135deg);
+      }
+
+      20%,
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes rotate-out {
+
+      0%,
+      80% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(135deg);
+      }
+    }
+
+    @keyframes shadow {
+
+      0%,
+      100% {
+        transform: scaleX(.5);
+      }
+
+      45%,
+      50% {
+        transform: scaleX(1.8);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame">
+      <div class="down">
+        <div class="up">
+          <div class="squeeze">
+            <div class="rotate-in">
+              <div class="rotate-out">
+                <div class="square"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </main>
+</body>
+
+</html>
