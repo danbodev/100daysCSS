@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 87 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #34495e;
+    }
+
+
+    .cradle {
+      position: relative;
+      width: 200px;
+      height: 40px;
+      padding-top: 100px;
+      display: flex;
+    }
+
+    .cradle:before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 6px;
+      top: 0;
+      left: 0;
+      border-radius: 3px;
+      background: #bdc3c7;
+    }
+
+    .cradle .ball {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      transform-origin: 50% -100px;
+    }
+
+    .cradle .ball:before {
+      content: "";
+      position: absolute;
+      height: 100px;
+      width: 1px;
+      top: -100px;
+      left: 19px;
+      background: #bdc3c7;
+    }
+
+    .cradle .ball-1 {
+      animation: ball-1 0.8s ease-out infinite alternate;
+    }
+
+    .cradle .ball-5 {
+      animation: ball-5 0.8s ease-out 0.8s infinite alternate;
+    }
+
+    @keyframes ball-1 {
+
+      0%,
+      50% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(30deg);
+      }
+    }
+
+    @keyframes ball-5 {
+
+      0%,
+      50% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(-30deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="cradle">
+      <div class="ball ball-1"></div>
+      <div class="ball ball-2"></div>
+      <div class="ball ball-3"></div>
+      <div class="ball ball-4"></div>
+      <div class="ball ball-5"></div>
+    </div>
+  </main>
+</body>
+
+</html>
