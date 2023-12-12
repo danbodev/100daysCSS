@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 89 | CSS CHALLENGE</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      font-family: Montserrat, sans-serif;
+      background: #fdfdfd;
+    }
+
+    .loading {
+      zoom: 1.5;
+    }
+
+    .text {
+      color: #febd01;
+      display: inline-block;
+      margin-left: 5px;
+      width: 11ch;
+      animation: loading 2s steps(25) infinite alternate;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ball {
+      position: relative;
+      display: inline-block;
+      height: 37px;
+      width: 15px;
+    }
+
+    .ball::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #febd01;
+      transform-origin: 50%;
+      animation: bounce 500ms alternate infinite ease;
+    }
+
+    @keyframes bounce {
+      0% {
+        top: 30px;
+        height: 5px;
+        border-radius: 60px 60px 20px 20px;
+        transform: scaleX(2);
+      }
+
+      35% {
+        height: 15px;
+        border-radius: 50%;
+        transform: scaleX(1);
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="loading">
+      <div class="ball"></div>
+      <p class="text">LOADING ...</d>
+    </div>
+  </main>
+</body>
+
+</html>
