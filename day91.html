@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 91 | CSS CHALLENGE</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      font-family: Montserrat, sans-serif;
+      background: #34495e;
+    }
+
+    .cube {
+      transform-style: preserve-3d;
+      transform: rotateX(-25deg) rotateY(45deg);
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .cube:hover {
+      transform: rotateX(-25deg) rotateY(45deg) translateY(-15px);
+    }
+
+    .cube:hover .bottom {
+      box-shadow: -22px -22px 30px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .side {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(60px);
+      background: rgba(46, 204, 113, 0.8);
+      box-shadow: -8px -8px 10px 0 rgba(0, 0, 0, 0.4);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(60px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(60px);
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(60px);
+    }
+
+
+    .front {
+      transform: rotateY(0deg) translateZ(60px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(60px);
+      opacity: 0.5;
+    }
+
+    .left:before,
+    .right:before,
+    .back:before,
+    .front:before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: rgba(46, 204, 113, 0.8);
+      transform-origin: 50% 100%;
+      animation: fill 4s ease-in-out infinite alternate;
+    }
+
+    .fill-top {
+      background: rgba(46, 204, 113, 0.8);
+      animation: fill-top 4s ease-in-out infinite alternate;
+    }
+
+
+    @keyframes fill {
+
+      0%,
+      25% {
+        transform: scaleY(0);
+      }
+
+      75%,
+      100% {
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes color-bottom {
+      0% {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      25%,
+      100% {
+        background: rgba(46, 204, 113, 0.8);
+      }
+    }
+
+    @keyframes color-top {
+
+      0%,
+      25% {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      75%,
+      100% {
+        background: rgba(46, 204, 113, 0.8);
+      }
+    }
+
+    @keyframes fill-top {
+
+      0%,
+      25% {
+        transform: rotateX(90deg) translateZ(-60px);
+      }
+
+      75%,
+      100% {
+        transform: rotateX(90deg) translateZ(59px);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <div class="cube">
+      <div class="side bottom"></div>
+      <div class="side left"></div>
+      <div class="side right"></div>
+      <div class="side back"></div>
+      <div class="side front"></div>
+      <div class="side top"></div>
+      <div class="side fill-top"></div>
+  </main>
+</body>
+
+</html>
