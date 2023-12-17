@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 94 | CSS CHALLENGE</title>
+
+  <style>
+    .hypnotic {
+      --b: 15px;
+      position: fixed;
+      inset: calc(50% - 100vmax);
+      background:
+        repeating-radial-gradient(at bottom, #73626E 0 var(--b), #0000 0 calc(2*var(--b))) top /100% 50% no-repeat,
+        repeating-radial-gradient(at calc(50% + var(--b)) 0, #0000 0px var(--b), #73626E 0 calc(2*var(--b))) bottom/100% 50% no-repeat,
+        #F0B49E;
+      animation: hypnotic-r .8s linear infinite;
+    }
+
+    @keyframes hypnotic-r {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="hypnotic"></div>
+  </main>
+</body>
+
+</html>
