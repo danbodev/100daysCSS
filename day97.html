@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 97 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #C6D6B8;
+    }
+
+    .sound {
+      width: 150px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        linear-gradient(#fff 0 0) 23% 50%/22% 26% no-repeat,
+        conic-gradient(from 45deg at left, #fff 90deg, #0000 0) 33% 50%/30% 60% no-repeat,
+        #8FBE00;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 1px 1px 8px #0005;
+      transition: .4s;
+    }
+
+    .sound::before {
+      content: "";
+      position: absolute;
+      width: 30%;
+      aspect-ratio: 1;
+      top: 50%;
+      right: 50%;
+      padding: 3.5%;
+      background:
+        radial-gradient(closest-side at 50% 12.5%, #fff 96%, #0000) top /20% 80% repeat-y,
+        radial-gradient(closest-side at 12.5% 50%, #fff 96%, #0000) left/80% 20% repeat-x,
+        conic-gradient(from 90deg at 33% 33%, #0000 90deg, #fff 0) 100% 100%/60% 60% padding-box content-box;
+      transform: translateY(-50%) rotate(45deg);
+      opacity: 0;
+      transition: .4s;
+    }
+
+    .sound::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      aspect-ratio: 1;
+      top: 50%;
+      right: 17%;
+      border-radius: inherit;
+      background:
+        radial-gradient(50% 50%, #0000 47%, #fff 48% 65%, #0000 66%),
+        radial-gradient(50% 50%, #0000 80%, #fff 81%);
+      clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+      transform: translateY(-50%);
+      transition: .4s;
+    }
+
+    .sound:checked {
+      background-color: #CE1836;
+    }
+
+    .sound:checked::after {
+      opacity: 0;
+      right: 50%;
+    }
+
+    .sound:checked::before {
+      opacity: 1;
+      right: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <input type="checkbox" class="sound">
+  </main>
+</body>
+
+</html>
