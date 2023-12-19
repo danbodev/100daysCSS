@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 96 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #424254;
+    }
+
+    .bat {
+      --b: #424254;
+      --c: #231f20;
+      height: 300px;
+      width: 300px;
+      position: relative;
+    }
+
+    .bat:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        conic-gradient(from -160deg at top, #181617 320deg, #0000 0) 47.8% 71%/3% 3%,
+        conic-gradient(from -160deg at top, #181617 320deg, #0000 0) 52% 71%/3% 3%,
+        linear-gradient(#181617 0 0) 48% 68%/1.8% 5%,
+        linear-gradient(#181617 0 0) 52% 68%/1.8% 5%,
+        linear-gradient(#fff 0 0) 50% 44%/4% .9%,
+        radial-gradient(farthest-side, #fff 98%, #0000) 43.5% 35%/1% 1%,
+        radial-gradient(farthest-side, #fff 98%, #0000) 55% 35%/1% 1%,
+        radial-gradient(farthest-side, #231f20 98%, #0000) 55.5% 35.4%/4.2% 4.2%,
+        radial-gradient(farthest-side, #231f20 98%, #0000) 44% 35.4%/4.2% 4.2%,
+        radial-gradient(farthest-side, #fff 98%, #0000) 44% 36%/7% 7%,
+        radial-gradient(farthest-side, #fff 98%, #0000) 56% 36%/7% 7%,
+        radial-gradient(farthest-side, var(--b) 98%, #0000) 50% 11%/21% 25%,
+        radial-gradient(farthest-side at 50% 40%, var(--c) 98%, #0000) 50% 35%/27% 25%,
+        radial-gradient(farthest-side, #181617 98%, #0000) 50% 53%/16% 27%,
+        radial-gradient(50% 100% at bottom, var(--b) 98%, #0000) 50% 62%/37% 8%,
+        radial-gradient(50% 100% at bottom, var(--b) 98%, #0000) 78% 60%/15% 8%,
+        radial-gradient(50% 100% at bottom, var(--b) 98%, #0000) 22% 60%/15% 8%,
+        radial-gradient(50% 100% at bottom, var(--b) 98%, #0000) -4% 59%/22% 12%,
+        radial-gradient(50% 100% at bottom, var(--b) 98%, #0000) 104% 58%/22% 12%,
+        radial-gradient(50% 100% at top, var(--b) 98%, #0000) 50% 32%/50% 25%,
+        radial-gradient(50% 100% at bottom, var(--c) 98%, #0000) 50% 41%/100% 36%;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="bat"></div>
+  </main>
+</body>
+
+</html>
