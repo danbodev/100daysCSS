@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 98 | CSS CHALLENGE</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: #424254;
+    }
+
+    .stack {
+      width: 200px;
+      height: 200px;
+      display: inherit;
+      background:
+        linear-gradient(#bdbcbc 0 0) 75.3% 73.4%/6.5% 20%,
+        linear-gradient(#bdbcbc 0 0) 20.2% 73.4%/6.5% 20%,
+        linear-gradient(#bdbcbc 0 0) 45% 83.5%/58% 6.5%,
+        linear-gradient(#f4811e 0 0) 46.8% 69.6%/32.4% 6.5%;
+      background-repeat: no-repeat;
+    }
+
+    .stack:before,
+    .stack:after {
+      content: "";
+      grid-area: 1/1;
+      background: #f4811e;
+      transform-origin: 100% 55%;
+    }
+
+    .stack::before {
+      animation: stack-b 1s infinite alternate;
+    }
+
+    .stack::after {
+      animation: stack-a 1s infinite alternate;
+    }
+
+    @keyframes stack-b {
+
+      0%,
+      23% {
+        transform: translate(0%, -19.5%) rotate(0deg);
+        clip-path: polygon(31.6% 65.1%, 31.6% 71.8%, 64% 71.8%, 64% 65.1%, 64% 65.1%, 64% 58.4%, 31.6% 58.4%, 31.6% 65.1%,
+            64% 65.1%, 64% 65.1%);
+      }
+
+      80%,
+      100% {
+        transform: translate(8%, 4%) rotate(40deg);
+        clip-path: polygon(31.6% 65.1%, 31.6% 71.8%, 64% 71.8%, 64% 65.1%, 64% 63.6%, 65.3% 57.2%, 33.7% 50.6%, 32.3% 57%,
+            64% 63.6%, 64% 65.1%);
+      }
+    }
+
+    @keyframes stack-a {
+
+      0%,
+      30% {
+        transform: translate(0%, -6.6%) rotate(0deg);
+        clip-path: polygon(31.6% 65.1%, 31.6% 71.8%, 64% 71.8%, 64% 65.1%, 64% 65.1%, 64% 58.4%, 31.6% 58.4%, 31.6% 65.1%,
+            64% 65.1%, 64% 65.1%);
+      }
+
+      80%,
+      100% {
+        transform: translate(3%, 0%) rotate(12deg);
+        clip-path: polygon(31.6% 65.1%, 31.6% 71.8%, 64% 71.8%, 64% 65.1%, 64% 63.6%, 65.3% 57.2%, 33.7% 50.6%, 32.3% 57%,
+            64% 63.6%, 64% 65.1%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="stack"></div>
+  </main>
+</body>
+
+</html>
